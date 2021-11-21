@@ -7,4 +7,4 @@ const result = [
   },
 ];
 
-moudels.exports = { result };
+module.exports = { result };

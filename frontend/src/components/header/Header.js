@@ -9,9 +9,9 @@ const Header = () => {
   activeKey="/home"
   onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
 >
-  <Nav.Item>
-    <Nav.Link href="/home">English</Nav.Link>
-  </Nav.Item>
+  {/* <Nav.Item>
+    <Nav.Link id='nav-link' href="/home">English</Nav.Link>
+  </Nav.Item> */}
  
 </Nav>
  </div>;

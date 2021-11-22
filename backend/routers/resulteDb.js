@@ -7,4 +7,4 @@ const result = [
   },
 ];
 
-module.exports = { result };
+modules.exports = { result };

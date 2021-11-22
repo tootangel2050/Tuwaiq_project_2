@@ -42,7 +42,7 @@ CancellationReason:"Payment Expired",
         ]
 
          
-        module.exports ={cancel}
+        modules.exports ={cancel}
 
 
 

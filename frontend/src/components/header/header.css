@@ -1,4 +1,15 @@
 #navbar{
- background-image: url("../image/1.PNG");
- padding: 30px;
+ background-image: url("../image/3.PNG");
+ background-repeat: no-repeat;
+ background:cover ;
+ background-size: cover;
+ padding: 50px;
+ width: 100%;
+}
+
+
+
+#nav-link{
+    float: right;
+
 }

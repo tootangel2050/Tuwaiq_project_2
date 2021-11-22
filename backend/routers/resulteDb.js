@@ -6,5 +6,4 @@ const result = [
     },
   },
 ];
-
-modules.exports = { result };
+moudels.exports = { result };

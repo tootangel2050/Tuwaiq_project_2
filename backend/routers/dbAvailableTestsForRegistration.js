@@ -23,4 +23,4 @@ const AvailableTestsForRegistration = [{
     
 
 ]
-module.exports = {AvailableTestsForRegistration}
+modules.exports = {AvailableTestsForRegistration}

@@ -6,5 +6,4 @@ const result = [
     },
   },
 ];
-
 moudels.exports = { result };

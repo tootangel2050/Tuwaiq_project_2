@@ -5,7 +5,7 @@ const getAllUsers = (req,res)=>{
 };
 
 const getUser = (req,res)=>{
-    // console.log(typeof user)
+    
     const foundUser = users.filter((elem, i) => {
         return i == req.params.id 
     })
@@ -43,5 +43,22 @@ const getUser = (req,res)=>{
         })
         
     }
+    const deleteUser = (req,res)=>{
+        const deletedUser = req.params.id
+        users.forEach((elem,i)=>{
+            if(i== usersId){
+
+            }
+        })
+    }
+    // app.delete('/delete/:name',(req, res)=>{
+    //     const foundProduct = products.find(elem=> elem.name == req.params.name)
+    // // if(!foundProduct) return res.status(404).send('the name was not found.');
+    // const index = products.indexOf(foundProduct);
+    
+    // products.splice(index, 1);
+    // res.send(foundProduct);
+    // });
+    
 
 module.exports = {getAllUsers , getUser, addNewUser , updateUser};

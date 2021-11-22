@@ -6,6 +6,7 @@ userRouter.get("/",getAllUsers);
 userRouter.get('/users/:id',getUser);
 userRouter.post('/users',addNewUser);
 userRouter.put('/users',updateUser);
+userRouter.delete('/users',deleteUser);
 
 
 module.exports ={userRouter};

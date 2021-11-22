@@ -1,0 +1,24 @@
+#bgColor{
+    height: 200px;
+    width: 100%;
+    background: rgba(150,193,205,0.37);
+background: linear-gradient(0deg,rgba(150,193,205,0.37) 0%, rgba(0,141,255,0.2) 0%);
+background: -webkit-linear-gradient(0deg,rgba(150,193,205,0.37) 0%, rgba(0,141,255,0.2) 0%);
+background: -moz-linear-gradient(0deg,rgba(150,193,205,0.37) 0%, rgba(0,141,255,0.2) 0%);
+border-radius: 5px;
+}
+
+#div{
+    text-align: center;
+    padding: 15px 10px 15px 10px ;
+    
+}
+
+.h3{
+    color: #008dff;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-size: small;
+}
+#par{
+    color: red;
+}

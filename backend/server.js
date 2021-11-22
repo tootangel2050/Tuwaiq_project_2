@@ -3,10 +3,14 @@ const cors = require('cors');
 
 const app = express();
 
+const {userRouter} = require("./routers/routes/userRouter");
+
 //routers
 
 //built-in middlewares
 app.use(express.json());
+app.use("/users",userRouter);
+
 
 //third-party middleware
 app.use(cors());

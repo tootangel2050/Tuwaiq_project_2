@@ -14,11 +14,25 @@ border-radius: 5px;
     
 }
 
-.h3{
+.hthree{
     color: #008dff;
    font-family: Georgia, 'Times New Roman', Times, serif;
-   font-size: small;
+   font-size: 15px;
 }
 #par{
     color: red;
+    font-size: 12px;
+}
+
+#cardList1{
+    font-size: 15px;
+}
+#cardList2{
+    font-size: 15px;
+}
+
+
+#list{
+
+    margin:10px
 }

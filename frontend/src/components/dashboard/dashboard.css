@@ -1,0 +1,22 @@
+#dropdown{
+
+    background-color: none;
+    padding-left: 170px;
+}
+.mb-3{
+    margin-left: 120px;
+    border-color: grey;
+}
+#dropdown{
+    margin-left: 80px; 
+}
+#drop{
+    margin-left: 60px;
+}
+.mb{
+    margin-block-end: auto;
+}
+
+.result-tab{
+    width: 50%;
+}

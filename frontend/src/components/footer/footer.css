@@ -4,6 +4,9 @@ h5 ,p {
 #footer-copyright{
     text-align: left;
 }
-.mdb{
+
+#mdb{
+    width: auto;
     background-color: gray;
+    color: honeydew;
 }

@@ -19,8 +19,8 @@ const Main = () => {
             <Card id="bgColor">
               <Card.Body>
                 <div id="div">
-                  <h3 class="h3">advertisement </h3>
-                  <p class="h3">
+                  <h3 class="hthree">advertisement </h3>
+                  <p class="hthree">
                     In accordance with the approved health precautions, you must
                     wear a mask and download the “Tawakkalna” application when
                     you come to the test
@@ -36,14 +36,13 @@ const Main = () => {
           </Col>
         </Row>
       </Container>
-
       <Container>
         <Row>
           <Col>
             <Form>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="mb-3" controlId="formBasic">
                 <Form.Label>National ID *</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
+                <Form.Control type="number" placeholder="Enter number" />
                 <Form.Text className="text-muted"></Form.Text>
               </Form.Group>
 
@@ -61,9 +60,9 @@ const Main = () => {
           </Col>
           <Col>
             <Card>
-              <Card.Header as="h5">demo Show</Card.Header>
+              <Card.Header id = "cardList1">demo Show</Card.Header>
               <Card.Body>
-                <Card.Title>
+                <Card.Title id = "cardList2">
                   Learn more about how to open a new account, sign up for a
                   paper or paper computerized test, and lots of other processes
                   to see by watching the demo.
@@ -75,7 +74,6 @@ const Main = () => {
                   <option value="Payment">Payment fees</option>
                 </select>
                 {/* <input type="submit" value="play" /> */}
-
                 <Button variant="primary">Play</Button>
               </Card.Body>
             </Card>

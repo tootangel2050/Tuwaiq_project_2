@@ -8,7 +8,7 @@ import {
   Button,
   ListGroup,
 } from "react-bootstrap";
-import "./main.css";
+import"./main.css";
 
 const Main = () => {
   return (

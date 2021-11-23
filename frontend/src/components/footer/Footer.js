@@ -1,19 +1,33 @@
-import React from 'react';
-import './footer.css';
+import React from "react";
+import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import './footer.css'
 
-const Footer = () => {
-	return( <div>
-		<div className="main-footer"></div>
-		<div className="container">
-			<div className="row">
-				{ }
-				<div className="col-md-3 col-sm-6">
-					
-				</div>
-			</div>
-		</div>
-	</div>
-	);
-};
+const FooterPage = () => {
+  return (
+    <MDBFooter id="mdb">
+      <MDBContainer fluid className="text-center text-md-left">
+        <MDBRow>
+          <MDBCol md="12">
+            <h5 className="title">Technical support</h5> 
+			<hr/>
+            <p>
+			If you have a technical problem, you can contact us through:
 
-export default Footer;
+Customer support portal Support Portal
+Customer support mobile apps
+            </p>
+          </MDBCol>
+          
+        </MDBRow>
+      </MDBContainer>
+	  <hr/>
+      <div className="footer-copyright">
+        <MDBContainer fluid>
+          &copy; {new Date().getFullYear()} Copyright:  2021 Education & Training Evaluation Commission
+        </MDBContainer>
+      </div>
+    </MDBFooter>
+  );
+}
+
+export default FooterPage;

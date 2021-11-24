@@ -3,6 +3,9 @@ const cors = require('cors');
 
 const app = express();
 
+//third-party middleware
+app.use(cors());
+
 const {userRouter} = require("./routers/routes/userRouter");
 const {cancelleTestRouter} = require("./routers/routes/cancelleTestRouter");
 
@@ -14,8 +17,6 @@ app.use("/users",userRouter);
 app.use("/cancellesTest",cancelleTestRouter);
 
 
-//third-party middleware
-app.use(cors());
 
 //app routers
 

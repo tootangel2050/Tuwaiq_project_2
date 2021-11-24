@@ -1,85 +1,76 @@
-import React, { Component, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  Form,
-  Button,
-  ListGroup,
-} from "react-bootstrap";
+import './logIn.css'
+import axios from "axios";
 
-export default function LogIn() {
+
+export default function Login() {
   const nav = useNavigate();
-  const [NationalID, setNationalID] = useState("");
-  const [Password, setPassword] = useState("");
-
-  function validatFrom() {
-    return NationalID.length > 0 && Password.length > 0;
+  const [nationalId, setNationalId] = useState("");
+  const [password, setPassword] = useState("");
+  // const navigation = useNavigate();
+  function validateForm() {
+    return nationalId.length > 0 && password.length > 0;
   }
-
-  function handleSubmit(event) {
-    event.preventDefault();
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log("===================================");
     axios
-      .post("user/", {
-        NationalID: NationalID,
-        Password: Password,
+      .post("http://localhost:5000/users/users", {
+        nationalId: nationalId,
+        password: password,
       })
-      .then((res) => {
-        console.log(res);
-        if (res.status == 200)
-          if (res.data.role === "Admin") {
+      .then((response) => {
+        console.log(response);
+        if (response.status == 200) {
+          if (response.data.role === "Admin") {
             nav("/admin");
-          } else if (res.data.role === "user") {
-            nav("/user");
+          } else if (response.data.role === "Boss") {
+            nav("/boss");
+          } else {
+            nav("/employ");
           }
+          sessionStorage.setItem("Id", response.data.id);
+        }
       })
       .catch((err) => {
         console.log(err);
-        //error password ("not correct");
+        // swal("not correct");
       });
   }
-
-
-  return(
-      <div>
-
-<Container>
-        <Row>
-          <Col>
-            <Form>
-              <Form.Group className="mb-3" controlId="formBasic">
-                <Form.Label>National ID *</Form.Label>
-                <Form.Control type="number" placeholder="Enter number" />
-                <Form.Text className="text-muted"></Form.Text>
-              </Form.Group>
-
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password *</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label=" i'm not a robot" />
-              </Form.Group>
-              <Button variant="primary" type="submit">
-                Login
-              </Button>
-            </Form>
-          </Col>
-         
-        </Row>
-      </Container>
-
-      <div>
-      {NationalID}
-      </div>
-      
-
-
-
-      </div>
-  )
-
+  return (
+    <div className="Login">
+      <Form onSubmit={(e)=>{handleSubmit(e)}}>
+        <Form.Group size="lg" controlId="text">
+          <Form.Label id="h">nationalId</Form.Label>
+          <Form.Control
+            autoFocus
+            type="text"
+            value={nationalId}
+            onChange={(e) => setNationalId(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group size="lg" controlId="password">
+          <Form.Label id="h">Password</Form.Label>
+          <Form.Control
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </Form.Group>
+        <Button
+          block
+          size="lg"
+          type="submit"
+          // disabled={!validateForm()}
+          to="/Dashboard"
+          
+        >
+          Login
+        </Button>
+      </Form>
+    </div>
+  );
 }

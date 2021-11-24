@@ -20,7 +20,7 @@ const getUser = (req,res)=>{
     const addNewUser = (req,res)=>{
         const addedUser = {
             name: req.body.name,
-            email: req.body.email,
+            NationalID: req.body.NationalID,
             password: req.body.password,
             isAdmin:req.body.isAdmin,
         }
@@ -35,7 +35,7 @@ const getUser = (req,res)=>{
         users.forEach((elem,i)=>{
             if(i == usersId){
                 elem.name = req.body.name;
-                elem.email = req.body.email;
+                elem.NationalID = req.body.NationalID;
                 elem.password = req.body.password;
                 elem.isAdmin = req.body.isAdmin;
                 res.send(elem);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./dashboard.css";
 import {
   Tabs,
@@ -14,56 +14,52 @@ import {
   Card,
   SplitButton,
 } from "react-bootstrap";
+import axios from "axios";
+import Available from "./Available";
+import Cancelled from"./Cancelled";
+import Previous from"./Previous";
+import { Link } from 'react-router-dom';
+
 
 const Dashboard = () => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    axios
+      .get("/users")
+      .then((resp) => {
+        // resp.data
+        setData(resp.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
+    // <div>
+    // {data.map(elem=>{
+    //     return (<div id="users-cards">
+    //       <p>name: {elem.name}</p>
+    //       <p>NationalID: {elem.NationalID}</p>
+    //       <p>password: {elem.password}</p>
+    //       <p>isAdmin: {elem.isAdmin}</p>
+    //     </div>)
+    //   })}
+    // </div>
+
     <Tabs
       defaultActiveKey="profile"
       id="uncontrolled-tab-example"
       className="mb-3"
     >
-      <Tab eventKey="home" title="home page">
-        <Tabs defaultActiveKey="Registered" id="uncontrolled" className="mb-3">
-          <Tab eventKey="Registered" title="Registered Tests">
+      <Tab eventKey="Registered" title="Registered Tests">
+        {data.map((elem) => {
+          return (
             <Container>
               <Row>
                 <Col sm>
                   <Card>
-                    <Card.Header>
-                      General Aptitude Test for University Graduates
-                    </Card.Header>
-                    <Card.Body>
-                      <Card.Title>Special title treatment</Card.Title>
-                      <Card.Text>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                  </Card>
-                </Col>
-                <br />
-                <Col sm>
-                  <Card>
-                    <Card.Header>
-                      General Aptitude Test for University Graduates
-                    </Card.Header>
-                    <Card.Body>
-                      <Card.Title>Special title treatment</Card.Title>
-                      <Card.Text>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                  </Card>
-                </Col>
-                <br />
-                <Col sm>
-                  <Card>
-                    <Card.Header>
-                      General Aptitude Test for University Graduates
-                    </Card.Header>
+                    <Card.Header>name: {elem.name}</Card.Header>
                     <Card.Body>
                       <Card.Title>Special title treatment</Card.Title>
                       <Card.Text>
@@ -76,199 +72,19 @@ const Dashboard = () => {
                 </Col>
               </Row>
             </Container>
-          </Tab>
-          <Tab eventKey="registration" title="Available tests for registration">
-            <Container>
-              <Row>
-                <Col sm>
-                  <Card>
-                    <Card.Header>
-                      General Aptitude Test for University Graduates
-                    </Card.Header>
-                    <Card.Body>
-                      <Card.Title>Special title treatment</Card.Title>
-                      <Card.Text>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                  </Card>
-                </Col>
-                <br />
-                <Col sm>
-                  <Card>
-                    <Card.Header>
-                      General Aptitude Test for University Graduates
-                    </Card.Header>
-                    <Card.Body>
-                      <Card.Title>Special title treatment</Card.Title>
-                      <Card.Text>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                  </Card>
-                </Col>
-                <br />
-                <Col sm>
-                  <Card>
-                    <Card.Header>
-                      General Aptitude Test for University Graduates
-                    </Card.Header>
-                    <Card.Body>
-                      <Card.Title>Special title treatment</Card.Title>
-                      <Card.Text>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              </Row>
-            </Container>
-          </Tab>
-
-          <Tab eventKey="Previous" title="Previous Tests">
-            <Container>
-              <Row>
-                <Col sm>
-                  <Card>
-                    <Card.Header>
-                      General Aptitude Test for University Graduates
-                    </Card.Header>
-                    <Card.Body>
-                      <Card.Title>Special title treatment</Card.Title>
-                      <Card.Text>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                  </Card>
-                </Col>
-                <br />
-                <Col sm>
-                  <Card>
-                    <Card.Header>
-                      General Aptitude Test for University Graduates
-                    </Card.Header>
-                    <Card.Body>
-                      <Card.Title>Special title treatment</Card.Title>
-                      <Card.Text>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                  </Card>
-                </Col>
-                <br />
-                <Col sm>
-                  <Card>
-                    <Card.Header>
-                      General Aptitude Test for University Graduates
-                    </Card.Header>
-                    <Card.Body>
-                      <Card.Title>Special title treatment</Card.Title>
-                      <Card.Text>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              </Row>
-            </Container>
-          </Tab>
-          <Tab eventKey="Cancelled" title="Cancelled Tests">
-            <Container>
-              <Row>
-                <Col sm>
-                  <Card>
-                    <Card.Header>
-                      General Aptitude Test for University Graduates
-                    </Card.Header>
-                    <Card.Body>
-                      <Card.Title>Special title treatment</Card.Title>
-                      <Card.Text>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                  </Card>
-                </Col>
-                <br />
-                <Col sm>
-                  <Card>
-                    <Card.Header>
-                      General Aptitude Test for University Graduates
-                    </Card.Header>
-                    <Card.Body>
-                      <Card.Title>Special title treatment</Card.Title>
-                      <Card.Text>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                  </Card>
-                </Col>
-                <br />
-                <Col sm>
-                  <Card>
-                    <Card.Header>
-                      General Aptitude Test for University Graduates
-                    </Card.Header>
-                    <Card.Body>
-                      <Card.Title>Special title treatment</Card.Title>
-                      <Card.Text>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </Card.Text>
-                      <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              </Row>
-            </Container>
-          </Tab>
-
-          <Tab eventKey="Result" title="Result">
-			  <div className="result-tab">
-            <InputGroup className="mb-3">
-              <FormControl aria-label="Text input with dropdown button" />
-              <SplitButton
-                variant="outline-secondary"
-                title="Search"
-                id="segmented-button"
-                alignleft
-              >
-                <Dropdown.Item href="#">Cognitive ability</Dropdown.Item>
-              </SplitButton>
-            </InputGroup>
-			</div>
-			<Container fluid="md">
-  <Row>
-    <Col><Card>
-  <Card.Header as="h5">Cognitive ability</Card.Header>
-  <Card.Body>
-    <Card.Title>Test Date :  1441/01/15 - 2019/09/14
-		<br/>
-Test Score :  91</Card.Title>
-    
-    <Button variant="primary">Details</Button>
-  </Card.Body>
-</Card></Col>
-  </Row>
-</Container>
-          </Tab>
-        </Tabs>
+          );
+        })}
       </Tab>
+      <Tab eventKey="available" title="Avilable tests">
+        <Available />
+      </Tab>
+      <Tab eventKey="cancelled" title="Cancelled tests">
+        <Cancelled/>
+      </Tab>
+      <Tab eventKey="previous" title="Previous tests">
+        <Previous/>
+      </Tab>
+
       <Tab eventKey="profile" title="Personal Identity Verification">
         <p id="drop">Identity Verification Policy</p>
         <hr />
@@ -409,14 +225,3 @@ Test Score :  91</Card.Title>
 };
 
 export default Dashboard;
-
-
-/* axios.get().then(resp=>{
-	setData(resp.data)
-})
-
-{data.map(elem=>{
-	return 
-})}
-
-*/

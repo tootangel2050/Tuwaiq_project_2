@@ -1,4 +1,4 @@
-const {cancellesTest} = require("../../../backend/routers/cancellesTestDb");
+const {cancellesTest} = require("../cancellesTestDb");
 
 const getAllCancellesTest = (req, res) => {
   res.send(cancellesTest);

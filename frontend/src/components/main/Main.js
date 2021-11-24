@@ -8,7 +8,7 @@ import {
   Button,
   ListGroup,
 } from "react-bootstrap";
-import"./main.css";
+import "./main.css";
 
 const Main = () => {
   return (
@@ -36,41 +36,26 @@ const Main = () => {
           </Col>
         </Row>
       </Container>
+
       <Container>
         <Row>
           <Col>
-            <Form>
-              <Form.Group className="mb-3" controlId="formBasic">
-                <Form.Label>National ID *</Form.Label>
-                <Form.Control type="number" placeholder="Enter number" />
-                <Form.Text className="text-muted"></Form.Text>
-              </Form.Group>
-
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password *</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label=" i'm not a robot" />
-              </Form.Group>
-              <Button variant="primary" type="submit">
-                Login
-              </Button>
-            </Form>
-          </Col>
-          <Col>
             <Card>
-              <Card.Header id = "cardList1">demo Show</Card.Header>
+              <Card.Header id="cardList1">demo Show</Card.Header>
               <Card.Body>
-                <Card.Title id = "cardList2">
+                <Card.Title id="cardList2">
                   Learn more about how to open a new account, sign up for a
                   paper or paper computerized test, and lots of other processes
                   to see by watching the demo.
                 </Card.Title>
                 <select id="list" name="list">
                   <option value="Register">Qiyas Exams Registration</option>
-                  <option value="paperBased">paper Based exams registration</option>
-                  <option value="computerBased">computer based exam Registration</option>
+                  <option value="paperBased">
+                    paper Based exams registration
+                  </option>
+                  <option value="computerBased">
+                    computer based exam Registration
+                  </option>
                   <option value="Payment">Payment fees</option>
                 </select>
                 {/* <input type="submit" value="play" /> */}

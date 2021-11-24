@@ -1,26 +1,26 @@
 const users = [
   {
     name: "Ali",
-    email: "Ali@hotmail.com",
-    password: "12345",
+    NationalID: 1053920599,
+    password: "665432",
     isAdmin: true,
   },
   {
     name: "Ahmad",
-    email: "Ahmad@hotmail.com",
-    password: "678910",
+    NationalID: 1068720802,
+    password: "123456",
     isAdmin: false,
   },
   {
     name: "Saad",
-    email: "Saad@hotmail.com",
-    password: "111213",
+    NationalID: 1053920590,
+    password: "111222",
     isAdmin: false,
   },
   {
     name: "Sami",
-    email: "Sami@hotmail.com",
-    password: "141516",
+    NationalID: 1068720800,
+    password: "111333",
     isAdmin: false,
   },
 ];

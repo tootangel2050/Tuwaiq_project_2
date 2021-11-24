@@ -1,6 +1,15 @@
 import React, { Component, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import {
+  Container,
+  Row,
+  Col,
+  Card,
+  Form,
+  Button,
+  ListGroup,
+} from "react-bootstrap";
 
 export default function LogIn() {
   const nav = useNavigate();
@@ -8,7 +17,7 @@ export default function LogIn() {
   const [Password, setPassword] = useState("");
 
   function validatFrom() {
-    return NationalID.lenght > 0 && Password.lenght > 0;
+    return NationalID.length > 0 && Password.length > 0;
   }
 
   function handleSubmit(event) {
@@ -29,13 +38,48 @@ export default function LogIn() {
       })
       .catch((err) => {
         console.log(err);
-        //swa1("not correct");
+        //error password ("not correct");
       });
   }
 
 
   return(
-      <div></div>
+      <div>
+
+<Container>
+        <Row>
+          <Col>
+            <Form>
+              <Form.Group className="mb-3" controlId="formBasic">
+                <Form.Label>National ID *</Form.Label>
+                <Form.Control type="number" placeholder="Enter number" />
+                <Form.Text className="text-muted"></Form.Text>
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password *</Form.Label>
+                <Form.Control type="password" placeholder="Password" />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Check type="checkbox" label=" i'm not a robot" />
+              </Form.Group>
+              <Button variant="primary" type="submit">
+                Login
+              </Button>
+            </Form>
+          </Col>
+         
+        </Row>
+      </Container>
+
+      <div>
+      {NationalID}
+      </div>
+      
+
+
+
+      </div>
   )
 
 }

@@ -1,20 +1,21 @@
-import React from 'react';
-import {Nav } from "react-bootstrap";
+import React from "react";
+import { Nav } from "react-bootstrap";
 import "./header.css";
 
 const Header = () => {
-	return <div>
-    
-<Nav id="navbar"
-  activeKey="/home"
-  onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
->
-  {/* <Nav.Item>
+  return (
+    <div>
+      <Nav
+        id="navbar"
+        activeKey="/home"
+        onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+      >
+        {/* <Nav.Item>
     <Nav.Link id='nav-link' href="/home">English</Nav.Link>
   </Nav.Item> */}
- 
-</Nav>
- </div>;
+      </Nav>
+    </div>
+  );
 };
 
 export default Header;

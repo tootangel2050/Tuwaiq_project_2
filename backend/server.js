@@ -3,6 +3,9 @@ const cors = require('cors');
 
 const app = express();
 
+//third-party middleware
+app.use(cors());
+
 const {userRouter} = require("./routers/routes/userRouter");
 const {cancelleTestRouter} = require("./routers/routes/cancelleTestRouter");
 const{availableTestForRegistrationRouter} = require("./routers/routes/availableTestForRegistrationRouter");
@@ -17,8 +20,6 @@ app.use("/availableTestsForRegistration",availableTestForRegistrationRouter);
 app.use("/prevuss",prevusRouter);
 
 
-//third-party middleware
-app.use(cors());
 
 //app routers
 

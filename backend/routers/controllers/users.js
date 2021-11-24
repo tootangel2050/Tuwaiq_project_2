@@ -18,6 +18,7 @@ const getUser = (req,res)=>{
 
     
     const addNewUser = (req,res)=>{
+        console.log("object")
         const addedUser = {
             name: req.body.name,
             NationalID: req.body.NationalID,

@@ -36,4 +36,4 @@ const cancellesTest = [
   },
 ]
 
-modules.exports = { cancellesTest }
+module.exports = { cancellesTest }

@@ -19,6 +19,7 @@ import Available from "./Available";
 import Cancelled from"./Cancelled";
 import Previous from"./Previous";
 import { Link } from 'react-router-dom';
+import RegisteredTest from "./RegisteredTest";
 import Resulted from "./resulted";
 
 
@@ -38,16 +39,7 @@ const Dashboard = () => {
 
   return (
     <>
-    {/* // <div> */}
-    {/* // {data.map(elem=>{
-    //     return (<div id="users-cards">
-    //       <p>name: {elem.name}</p>
-    //       <p>NationalID: {elem.NationalID}</p>
-    //       <p>password: {elem.password}</p>
-    //       <p>isAdmin: {elem.isAdmin}</p>
-    //     </div>)
-    //   })}
-    // </div> */}
+   
 
     <Tabs
       defaultActiveKey="profile"
@@ -55,7 +47,9 @@ const Dashboard = () => {
       className="mb-3"
     >
       <Tab eventKey="Registered" title="Registered Tests">
-        {data.map((elem) => {
+        <RegisteredTest />
+        </Tab>
+        {/* {data.map((elem) => {
           return (
             <Container>
               <Row>
@@ -76,7 +70,7 @@ const Dashboard = () => {
             </Container>
           );
         })}
-      </Tab>
+      </Tab> */}
       <Tab eventKey="available" title="Avilable tests">
         <Available />
       </Tab>
@@ -86,6 +80,11 @@ const Dashboard = () => {
       <Tab eventKey="previous" title="Previous tests">
         <Previous/>
       </Tab>
+      <Tab eventKey="resulted" title="Resulted">
+      <Resulted/>
+      </Tab>
+
+      
 
       <Tab eventKey="profile" title="Personal Identity Verification">
         <p id="drop">Identity Verification Policy</p>
@@ -94,6 +93,8 @@ const Dashboard = () => {
 
         <DropdownButton align="end" title="Select..." id="dropdown">
           <Dropdown.Item eventKey="1">Select...</Dropdown.Item>
+          
+
           <Dropdown.Divider />
         </DropdownButton>
 
@@ -227,7 +228,7 @@ const Dashboard = () => {
         </Container>
       </Tab>
     </Tabs>
-    <Resulted/>
+    
     </>
   );
 };

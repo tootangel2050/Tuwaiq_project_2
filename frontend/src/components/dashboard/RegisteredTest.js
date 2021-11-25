@@ -1,19 +1,25 @@
-import axiox from "axios"
+
 import React , {useState , useEffect} from "react"
 import {Row,
   Col,
   Container,
   Card, 
-} from "react-bootstrap"; 
+} from "react-bootstrap";
+import "./dashboard.css";
+import axios from "axios"; 
 
 const RegisteredTest = () => {
     const [data , setData] = useState([]);
     useEffect (() => {
         axios 
-        .get("test")
-        .then((res) => {
-            console.log(err);
+        .get("test/")
+        .then((resp) => {
+          setData(resp.data);
+            
         })
+        .catch((err) => {
+          console.log(err);
+        });
     }, []);
     return (
         <div>

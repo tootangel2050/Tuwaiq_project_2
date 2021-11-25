@@ -1,0 +1,25 @@
+
+@media all and (min-width: 480px) {
+  
+    .Login {
+      padding: 60px 0;
+      display:inline;
+    }
+  
+    .Login form {
+      margin: 0 auto;
+      max-width: 320px;
+    }
+  }
+#h{
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+
+#Login{
+border: black;
+flex-direction:row;
+flex: content;
+
+}
+
+
+/*................................................*/

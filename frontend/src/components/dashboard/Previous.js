@@ -21,7 +21,7 @@ const Previous= () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("/prevuss")
+      .get("/test/prevuss")
       .then((resp) => {
         // resp.data
         console.log(resp.data)

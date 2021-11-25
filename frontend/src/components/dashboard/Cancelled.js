@@ -21,7 +21,7 @@ const Cancelled= () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("/cancellesTest")
+      .get("/test/cancelled")
       .then((resp) => {
         // resp.data
         console.log(resp.data)

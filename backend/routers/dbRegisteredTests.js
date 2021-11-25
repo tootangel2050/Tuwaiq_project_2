@@ -26,4 +26,4 @@ const registeredTests =[{
 ]
 
 
-modules.exports = {registeredTests}
+module.exports = {registeredTests}

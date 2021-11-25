@@ -19,6 +19,7 @@ import Available from "./Available";
 import Cancelled from"./Cancelled";
 import Previous from"./Previous";
 import { Link } from 'react-router-dom';
+import Resulted from "./resulted";
 
 
 const Dashboard = () => {
@@ -36,8 +37,9 @@ const Dashboard = () => {
   }, []);
 
   return (
-    // <div>
-    // {data.map(elem=>{
+    <>
+    {/* // <div> */}
+    {/* // {data.map(elem=>{
     //     return (<div id="users-cards">
     //       <p>name: {elem.name}</p>
     //       <p>NationalID: {elem.NationalID}</p>
@@ -45,7 +47,7 @@ const Dashboard = () => {
     //       <p>isAdmin: {elem.isAdmin}</p>
     //     </div>)
     //   })}
-    // </div>
+    // </div> */}
 
     <Tabs
       defaultActiveKey="profile"
@@ -79,7 +81,7 @@ const Dashboard = () => {
         <Available />
       </Tab>
       <Tab eventKey="cancelled" title="Cancelled tests">
-        <Cancelled/>
+        <Cancelled />
       </Tab>
       <Tab eventKey="previous" title="Previous tests">
         <Previous/>
@@ -212,15 +214,21 @@ const Dashboard = () => {
             </Row>
           </InputGroup>
           <br />
+          
           <Button variant="primary" size="lg" active>
             Follow up
           </Button>{" "}
+           
+          <Link to="/">
           <Button variant="secondary" size="lg" active>
             Back To Main Page
           </Button>
+          </Link>
         </Container>
       </Tab>
     </Tabs>
+    <Resulted/>
+    </>
   );
 };
 

@@ -10,10 +10,11 @@ export default function Login() {
   const nav = useNavigate();
   const [nationalId, setNationalId] = useState("");
   const [password, setPassword] = useState("");
-  // const navigation = useNavigate();
+  const navigation = useNavigate();
   function validateForm() {
     return nationalId.length > 0 && password.length > 0;
   }
+  
   function handleSubmit(e) {
     e.preventDefault();
     console.log("===================================");
@@ -34,6 +35,7 @@ export default function Login() {
           }
           sessionStorage.setItem("Id", response.data.id);
         }
+        navigation("/dashboard")
       })
       .catch((err) => {
         console.log(err);
@@ -64,9 +66,7 @@ export default function Login() {
           block
           size="lg"
           type="submit"
-          // disabled={!validateForm()}
-          to="/Dashboard"
-          
+          disabled={!validateForm()}
         >
           Login
         </Button>

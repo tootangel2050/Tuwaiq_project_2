@@ -1,9 +1,9 @@
 const result = [
   {
-    CognitiveAbilityTest: {
+    name:"CognitiveAbilityTest",
       TestDate: 15/01/1441,
       TestScore: 94,
-    },
-  },
+  
+  }
 ];
-moudels.exports = { result };
+module.exports = { result };

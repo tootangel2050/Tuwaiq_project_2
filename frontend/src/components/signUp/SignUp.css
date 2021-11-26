@@ -1,0 +1,48 @@
+@media all and (min-width: 480px) {
+  
+    .SignUp {
+      padding: 300px;
+      display:inline;
+      
+    }
+  
+    .SignUp {
+      margin: 50px;
+      max-width: 320px;
+      border-radius: 5px;
+    
+    }
+  }
+
+  #h , #cardList1{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+
+    
+    #btn{
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+    font-family:Arial, Helvetica, sans-serif ;
+    align-items:center ;
+    font-size: 15px;
+    
+    
+    }
+    
+    #btn2{
+      color: rgb(121, 121, 77);
+      width: 150px;
+      height: 30px;
+      margin: 10px;
+      font-size: 15px;
+      color: aliceblue;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      
+    }
+    
+    #btn3{
+      width: 100px;
+      height: 30px;
+      text-align: center;
+    }
+    

@@ -2,7 +2,10 @@
 import React , { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Card, Form, Container, Row, Col , Button} from "react-bootstrap";
+import './SignUp.css'
 import axios from "axios";
+import { Link } from 'react-router-dom';
+
 
 
 export default function signUp() {
@@ -12,7 +15,7 @@ export default function signUp() {
   
   
   return (
-    <div className="Login">
+    <div className="SignUp">
       <Container>
         <Row>
           <Col>
@@ -23,6 +26,8 @@ export default function signUp() {
             >
               <Card.Header id="cardList1"></Card.Header>
               <Form.Group size="lg" controlId="text">
+              <Card.Header id="cardList1">Sign Up With A Qiyas Account</Card.Header>
+
                 <Form.Label id="h">NationalID </Form.Label>
                 <Form.Control
                   autoFocus
@@ -55,6 +60,11 @@ export default function signUp() {
               <Button id="btn" type="submit"  >
               Register
               </Button>
+              <Link to="/">
+          <Button variant="secondary" size="ms" active>
+            Back To Main Page
+          </Button>
+          </Link>
             </Form>
           </Col>
         </Row>

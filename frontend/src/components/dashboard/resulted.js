@@ -27,7 +27,7 @@ const Resulted = () => {
           <Container>
             <Row>
               <Col>
-                <Card>
+                <Card id="t">
                   <Card.Body>
                     <Card.Title>TestDate: {elem.TestDate}</Card.Title>
                     <Card.Text>

@@ -25,7 +25,8 @@
     margin-bottom: 10px;
       border: 1px solid rgb(0,0,0);
 }
-
-/* #users-cards{
-    border: 2px solid pink;
-} */
+#t{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    
+}

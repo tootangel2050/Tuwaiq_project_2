@@ -51,7 +51,7 @@ const Cancelled= () => {
       </Card.Body>
     </Card> */}
 
-<Card>
+<Card id="t">
   <Card.Body>
     <Card.Title>Name: {elem.name}</Card.Title>
     <Card.Text>

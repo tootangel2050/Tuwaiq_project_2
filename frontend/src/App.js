@@ -5,7 +5,7 @@ import Main from "./components/main/Main";
 import Login from "./components/logIn/LogIn";
 import Dashboard from "./components/dashboard/Dashboard";
 import Footer from "./components/footer/Footer";
-// import SignUp from "./components/signUp/signUp"
+import SignUp from "./components/signUp/signUp"
 import Navigation from "./components/navigation/index";
 
 const App = () => {
@@ -21,7 +21,7 @@ const App = () => {
       </Routes>
        
       <Footer />
-      <signUp />
+
       {/* <Navigation /> */}
     </div>
   );

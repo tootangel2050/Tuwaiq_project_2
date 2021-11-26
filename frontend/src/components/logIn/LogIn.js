@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { useNavigate } from "react-router-dom";
-import CardHeader
- from "react-bootstrap/esm/CardHeader";
+import { useNavigate , Link } from "react-router-dom";
  import { Card , Container ,Row ,Col  } from "react-bootstrap";
- import { Link } from "react-router-dom";
+//  import { Link } from "react-router-dom";
 import './logIn.css'
 import axios from "axios";
 
@@ -43,7 +41,7 @@ export default function Login() {
       })
       .catch((err) => {
         console.log(err);
-        // swal("not correct");
+      
       });
   }
   return (
@@ -70,19 +68,26 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button
-          block
-          size="lg"
-          type="submit"
-          disabled={!validateForm()}
+        <Button id="btn" block type="submit" disabled={!validateForm()}
         >
           Login
         </Button>
+        <br/>
+
+  <Button variant="link">You Don't Have Qiyas Account ?</Button>
+
+  <Button id="btn2" variant="warning">Rigster</Button>{' '}
+        
+        
+     
+
+ 
+      
       </Form>
       </Col>
 
       <Col>
-          <Card id="card1">
+          <Card>
               <Card.Header id="cardList1">demo Show</Card.Header>
               <Card.Body>
                 <Card.Title id="cardList2">
@@ -103,7 +108,7 @@ export default function Login() {
                 </select>
 
                 <Link to="test/">
-                  <Button variant="primary" size="lg" active>
+                  <Button id="btn3" variant="primary" active>
                     Play
                   </Button>{" "}
                 </Link>

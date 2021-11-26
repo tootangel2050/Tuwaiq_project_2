@@ -4,7 +4,8 @@ import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
 import CardHeader
  from "react-bootstrap/esm/CardHeader";
- import { Card } from "react-bootstrap";
+ import { Card , Container ,Row ,Col  } from "react-bootstrap";
+ import { Link } from "react-router-dom";
 import './logIn.css'
 import axios from "axios";
 
@@ -47,7 +48,9 @@ export default function Login() {
   }
   return (
     <div className="Login">
-     
+     <Container>
+        <Row>
+          <Col>
       <Form onSubmit={(e)=>{handleSubmit(e)}}>
       <Card.Header id="cardList1">Login With A Qiyas Account</Card.Header>
         <Form.Group size="lg" controlId="text">
@@ -76,6 +79,39 @@ export default function Login() {
           Login
         </Button>
       </Form>
+      </Col>
+
+      <Col>
+          <Card id="card1">
+              <Card.Header id="cardList1">demo Show</Card.Header>
+              <Card.Body>
+                <Card.Title id="cardList2">
+                  Learn more about how to open a new account, sign up for a
+                  paper or paper computerized test, and lots of other processes
+                  to see by watching the demo.
+                </Card.Title>
+
+                <select id="list" name="list">
+                  <option value="Register">Qiyas Exams Registration</option>
+                  <option value="paperBased">
+                    paper Based exams registration
+                  </option>
+                  <option value="computerBased">
+                    computer based exam Registration
+                  </option>
+                  <option value="Payment">Payment fees</option>
+                </select>
+
+                <Link to="test/">
+                  <Button variant="primary" size="lg" active>
+                    Play
+                  </Button>{" "}
+                </Link>
+              </Card.Body>
+            </Card>
+          </Col>
+      </Row>
+      </Container>
     </div>
   );
 }

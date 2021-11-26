@@ -38,10 +38,10 @@ const Main = () => {
         </Row>
       </Container>
 
-      <Container>
+      {/* <Container>
         <Row>
           <Col>
-            <Card id="card1">
+          <Card id="card1">
               <Card.Header id="cardList1">demo Show</Card.Header>
               <Card.Body>
                 <Card.Title id="cardList2">
@@ -49,9 +49,8 @@ const Main = () => {
                   paper or paper computerized test, and lots of other processes
                   to see by watching the demo.
                 </Card.Title>
-               
+
                 <select id="list" name="list">
-                  
                   <option value="Register">Qiyas Exams Registration</option>
                   <option value="paperBased">
                     paper Based exams registration
@@ -61,18 +60,17 @@ const Main = () => {
                   </option>
                   <option value="Payment">Payment fees</option>
                 </select>
-              
+
                 <Link to="test/">
-                <Button variant="primary" size="lg" active>
-    Play
-  </Button>{' '}
-  </Link>
+                  <Button variant="primary" size="lg" active>
+                    Play
+                  </Button>{" "}
+                </Link>
               </Card.Body>
-              
             </Card>
           </Col>
         </Row>
-      </Container>
+      </Container> */}
     </div>
   );
 };

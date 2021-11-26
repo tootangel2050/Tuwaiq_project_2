@@ -219,7 +219,7 @@ const Dashboard = () => {
           <Button variant="primary" size="lg" active>
             Follow up
           </Button>{" "}
-           
+          
           <Link to="/">
           <Button variant="secondary" size="lg" active>
             Back To Main Page

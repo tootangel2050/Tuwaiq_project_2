@@ -21,7 +21,7 @@ const App = () => {
       </Routes>
        
       <Footer />
-      <SignUp />
+
       {/* <Navigation /> */}
     </div>
   );

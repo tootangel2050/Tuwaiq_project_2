@@ -20,7 +20,7 @@ const Navigation = () => {
           </Nav>
         </Container>
       </Navbar>
-	  <Outlet />
+      <Outlet />
     </>
   );
 };

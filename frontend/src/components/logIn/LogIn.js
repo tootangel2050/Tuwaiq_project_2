@@ -5,82 +5,40 @@ import { useNavigate , Link } from "react-router-dom";
  import { Card , Container ,Row ,Col  } from "react-bootstrap";
 import './logIn.css'
 import axios from "axios";
-
-
 export default function Login() {
-
+  const nav = useNavigate();
   const [nationalId, setNationalId] = useState("");
-  const [password, setPassword] = useState("")
-  const navigate = useNavigate();
+  const [password, setPassword] = useState("");
+  const navigation = useNavigate();
   function validateForm() {
     return nationalId && password;
   }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-  axios
-  .post('http://localhost:5000/users/users',
- {
-  nationalId: nationalId,
-   password: password,
- }).then(res =>{
-    console.log(res.data)
-    if(res.data && res.data !="Invalid National id or password")
-    {
-      console.log(res.data.nationalId);
-
-      navigate("/dashboard", { state: { nationalId: res.data.nationalId}});
-
-    }
-    
-    // if(res.data === 'User not found');
-    // swal('Incorrect user name or password');
-}).catch(err => {
-console.log(err); 
-
-});
-
-   }
-
-
-
-
-// export default function Login() {
-//   const nav = useNavigate();
-//   const [nationalId, setNationalId] = useState("");
-//   const [password, setPassword] = useState("");
-//   const navigation = useNavigate();
-//   function validateForm() {
-//     return nationalId.length > 0 && password.length > 0;
-//   }
   
-//   function handleSubmit(e) {
-//     e.preventDefault();
-//     console.log("===================================");
-//     axios
-//       .post("http://localhost:5000/users/users", {
-//         nationalId: nationalId,
-//         password: password,
-//       })
-//       .then((response) => {
-//         console.log(response);
-//         if (response.status == 200) {
-//           if (response.data. NationalID === " NationalID") {
-//             nav("/dashboard");
-//           // } else if (response.data.isAdmin === "Admin") {
-//           //   nav("/admin");
-//           } else {
-//             nav("/");
-//           }
-//           sessionStorage.setItem("NationalID", response.data.NationalID);
-//         }
-//         navigation("/dashboard")
-//       })
-//       .catch((err) => {
-//         console.log(err);
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log("===================================");
+    axios
+      .post("http://localhost:5000/users/users", {
+        nationalId: nationalId,
+        password: password,
+      })
+      .then((response) => {
+        console.log(response);
+        if (response.status == 200) {
+          if (response.data && response.data != " NationalID or password") {
+            nav("/dashboard",{state:{nationalId:response.data.nationalId}});
+          } else {
+            nav("/");
+          }
+          sessionStorage.setItem("NationalID", response.data.NationalID);
+        } 
+        navigation("/dashboard")
+      })
+      .catch((err) => {
+        console.log(err);
       
-//       });
-//   }
+      });
+  }
   return (
     <div className="Login">
      <Container>

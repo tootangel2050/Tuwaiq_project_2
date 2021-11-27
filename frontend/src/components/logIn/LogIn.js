@@ -3,47 +3,84 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useNavigate , Link } from "react-router-dom";
  import { Card , Container ,Row ,Col  } from "react-bootstrap";
-//  import { Link } from "react-router-dom";
 import './logIn.css'
 import axios from "axios";
 
 
 export default function Login() {
-  const nav = useNavigate();
+
   const [nationalId, setNationalId] = useState("");
-  const [password, setPassword] = useState("");
-  const navigation = useNavigate();
+  const [password, setPassword] = useState("")
+  const navigate = useNavigate();
   function validateForm() {
-    return nationalId.length > 0 && password.length > 0;
+    return nationalId && password;
   }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+  axios
+  .post('http://localhost:5000/users/users',
+ {
+  nationalId: nationalId,
+   password: password,
+ }).then(res =>{
+    console.log(res.data)
+    if(res.data && res.data !="Invalid National id or password")
+    {
+      console.log(res.data.nationalId);
+
+      navigate("/dashboard", { state: { nationalId: res.data.nationalId}});
+
+    }
+    
+    // if(res.data === 'User not found');
+    // swal('Incorrect user name or password');
+}).catch(err => {
+console.log(err); 
+
+});
+
+   }
+
+
+
+
+// export default function Login() {
+//   const nav = useNavigate();
+//   const [nationalId, setNationalId] = useState("");
+//   const [password, setPassword] = useState("");
+//   const navigation = useNavigate();
+//   function validateForm() {
+//     return nationalId.length > 0 && password.length > 0;
+//   }
   
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log("===================================");
-    axios
-      .post("http://localhost:5000/users/users", {
-        nationalId: nationalId,
-        password: password,
-      })
-      .then((response) => {
-        console.log(response);
-        if (response.status == 200) {
-          if (response.data. NationalID === " NationalID") {
-            nav("/dashboard");
-          // } else if (response.data.isAdmin === "Admin") {
-          //   nav("/admin");
-          } else {
-            nav("/");
-          }
-          sessionStorage.setItem("NationalID", response.data.NationalID);
-        }
-        navigation("/dashboard")
-      })
-      .catch((err) => {
-        console.log(err);
+//   function handleSubmit(e) {
+//     e.preventDefault();
+//     console.log("===================================");
+//     axios
+//       .post("http://localhost:5000/users/users", {
+//         nationalId: nationalId,
+//         password: password,
+//       })
+//       .then((response) => {
+//         console.log(response);
+//         if (response.status == 200) {
+//           if (response.data. NationalID === " NationalID") {
+//             nav("/dashboard");
+//           // } else if (response.data.isAdmin === "Admin") {
+//           //   nav("/admin");
+//           } else {
+//             nav("/");
+//           }
+//           sessionStorage.setItem("NationalID", response.data.NationalID);
+//         }
+//         navigation("/dashboard")
+//       })
+//       .catch((err) => {
+//         console.log(err);
       
-      });
-  }
+//       });
+//   }
   return (
     <div className="Login">
      <Container>
@@ -52,7 +89,7 @@ export default function Login() {
       <Form onSubmit={(e)=>{handleSubmit(e)}}>
       <Card.Header id="cardList1">Login With A Qiyas Account</Card.Header>
         <Form.Group size="lg" controlId="text">
-          <Form.Label id="h">NationalId*</Form.Label>
+          <Form.Label>NationalId*</Form.Label>
           <Form.Control
             autoFocus
             type="text"
@@ -61,7 +98,7 @@ export default function Login() {
           />
         </Form.Group>
         <Form.Group size="lg" controlId="password">
-          <Form.Label id="h">Password*</Form.Label>
+          <Form.Label>Password*</Form.Label>
           <Form.Control
             type="password"
             value={password}

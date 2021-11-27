@@ -28,7 +28,7 @@ const RegisteredTest = () => {
           <Container>
             <Row>
               <Col>
-                <Card>
+                <Card id="t">
                   <Card.Body>
                     <Card.Title>Name: {elem.Name}</Card.Title>
                     <Card.Text>AppointmentStatus:{elem.AppointmentStatus}</Card.Text>

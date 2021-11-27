@@ -28,14 +28,14 @@ export default function Login() {
       .then((response) => {
         console.log(response);
         if (response.status == 200) {
-          if (response.data.iaAdmin === "Admin") {
-            nav("/admin");
-          } else if (response.data.isAdmin === "Admin") {
-            nav("/admin");
+          if (response.data. NationalID === " NationalID") {
+            nav("/dashboard");
+          // } else if (response.data.isAdmin === "Admin") {
+          //   nav("/admin");
           } else {
-            nav("/user");
+            nav("/");
           }
-          sessionStorage.setItem("Id", response.data.id);
+          sessionStorage.setItem("NationalID", response.data.NationalID);
         }
         navigation("/dashboard")
       })
@@ -75,9 +75,9 @@ export default function Login() {
         <br/>
 
   <Button variant="link">You Don't Have Qiyas Account ?</Button>
-
+<Link to="/signUp">
   <Button id="btn2" variant="warning">Rigster</Button>{' '}
-        
+        </Link>
         
      
 

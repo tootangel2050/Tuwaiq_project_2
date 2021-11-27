@@ -16,7 +16,7 @@ export default function signUp() {
   
   return (
     <div className="SignUp">
-      <Container>
+      <Container id="form">
         <Row>
           <Col>
             <Form
@@ -24,11 +24,9 @@ export default function signUp() {
               //   handleSubmit(e);
               // }}
             >
-              <Card.Header id="cardList1"></Card.Header>
-              <Form.Group size="lg" controlId="text">
               <Card.Header id="cardList1">Sign Up With A Qiyas Account</Card.Header>
-
-                <Form.Label id="h">NationalID </Form.Label>
+              <Form.Group size="lg" controlId="text">
+                <Form.Label >NationalID </Form.Label>
                 <Form.Control
                   autoFocus
                   type="text"
@@ -37,9 +35,8 @@ export default function signUp() {
                 />
                 </Form.Group>
 
-              <Card.Header id="cardList1"></Card.Header>
               <Form.Group size="lg" controlId="text">
-                <Form.Label id="h">Password</Form.Label>
+                <Form.Label >Password</Form.Label>
                 <Form.Control
                   autoFocus
                   type="password"
@@ -48,7 +45,7 @@ export default function signUp() {
                 />
               </Form.Group>
               <Form.Group size="lg" controlId="password">
-                <Form.Label id="h">Date Of Birthday</Form.Label>
+                <Form.Label >Date Of Birthday</Form.Label>
                 <Form.Control
                   type="dateOfBirthday"
                 //    value={confirmPassword}
@@ -57,12 +54,12 @@ export default function signUp() {
               </Form.Group>
 
 
-              <Button id="btn" type="submit"  >
+              <Button id="btn" type="submit" variant="warning"  >
               Register
               </Button>
               <Link to="/">
-          <Button variant="secondary" size="ms" active>
-            Back To Main Page
+          <Button id="btn2" type="submit" variant="secondary"  active>
+             Main Page
           </Button>
           </Link>
             </Form>

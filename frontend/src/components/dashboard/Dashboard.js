@@ -232,9 +232,11 @@ const Dashboard = () => {
               </Row>
             </InputGroup>
             <br />
+            <Link to="dashboard">
             <Button id="btn1" variant="primary" size="lg" active>
               Follow up
             </Button>{" "}
+            </Link>
             <Link to="/">
               <Button id="btn1" variant="secondary" size="lg" active>
                 Main Page

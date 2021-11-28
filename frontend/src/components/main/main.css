@@ -1,52 +1,59 @@
-@media all  {
-
-#bgColor{
-    
-    background: rgba(150,193,205,0.37);
-background: linear-gradient(0deg,rgba(150,193,205,0.37) 0%, rgba(0,141,255,0.2) 0%);
-background: -webkit-linear-gradient(0deg,rgba(150,193,205,0.37) 0%, rgba(0,141,255,0.2) 0%);
-background: -moz-linear-gradient(0deg,rgba(150,193,205,0.37) 0%, rgba(0,141,255,0.2) 0%);
-border-radius: 5px;
-flex-direction: row;
-}}
-
-#div{
-    text-align: center;
-    padding: 15px 10px 15px 10px ;
-    
+@media all {
+  #bgColor {
+    background: rgba(150, 193, 205, 0.37);
+    background: linear-gradient(
+      0deg,
+      rgba(150, 193, 205, 0.37) 0%,
+      rgba(0, 141, 255, 0.2) 0%
+    );
+    background: -webkit-linear-gradient(
+      0deg,
+      rgba(150, 193, 205, 0.37) 0%,
+      rgba(0, 141, 255, 0.2) 0%
+    );
+    background: -moz-linear-gradient(
+      0deg,
+      rgba(150, 193, 205, 0.37) 0%,
+      rgba(0, 141, 255, 0.2) 0%
+    );
+    border-radius: 5px;
+    flex-direction: row;
+  }
 }
 
-.hthree{
-    color: #008dff;
-   font-family: Georgia, 'Times New Roman', Times, serif;
-   font-size: 15px;
-}
-#par{
-    color: red;
-    font-size: 12px;
+#div {
+  text-align: center;
+  padding: 15px 10px 15px 10px;
 }
 
-#cardList1{
-    font-size: 15px;
+.hthree {
+  color: #008dff;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 15px;
 }
-#cardList2{
-    font-size: 15px;
+#par {
+  color: red;
+  font-size: 12px;
 }
 
+#cardList1 {
+  font-size: 15px;
+}
+#cardList2 {
+  font-size: 15px;
+}
 
-#list{
-
-    margin:10px
+#list {
+  margin: 10px;
 }
 @media all and (min-width: 480px) {
-    #card1 {
-      padding: 60px 0;
-      display:inline;
-    }
-    
-  
-    #card1 {
-      margin: 0 auto;
-      max-width: 320px;
-    }
+  #card1 {
+    padding: 60px 0;
+    display: inline;
   }
+
+  #card1 {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}

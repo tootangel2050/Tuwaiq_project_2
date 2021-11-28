@@ -1,57 +1,48 @@
-
 @media all and (min-width: 480px) {
-  
-    .Login {
-      padding: 60px 0;
-      display:inline;
-      
-    }
-  
-    .Login form {
-      margin: 0 auto;
-      max-width: 320px;
-      border: 1px solid rgb(224, 222, 222);
-      border-radius: 5px;
-      padding: 10px;
-    }
+  .Login {
+    padding: 60px 0;
+    display: inline;
   }
-#h{
-font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
 
-#Login{
-border: black;
-flex-direction:row;
-flex: content;
-
+  .Login form {
+    margin: 0 auto;
+    max-width: 320px;
+    border: 1px solid rgb(224, 222, 222);
+    border-radius: 5px;
+    padding: 10px;
+  }
+}
+#h {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-
-#btn{
-width: 60px;
-height: 30px;
-margin: 10px;
-font-family:Arial, Helvetica, sans-serif ;
-align-items:center ;
-font-size: 15px;
-
-
+#Login {
+  border: black;
+  flex-direction: row;
+  flex: content;
 }
 
-#btn2{
+#btn {
+  width: 60px;
+  height: 30px;
+  margin: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  font-size: 15px;
+}
+
+#btn2 {
   color: rgb(121, 121, 77);
   width: 150px;
   height: 30px;
   margin: 10px;
   font-size: 15px;
   color: aliceblue;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-#btn3{
+#btn3 {
   width: 100px;
   height: 30px;
   text-align: center;
 }
-
-/*................................................*/

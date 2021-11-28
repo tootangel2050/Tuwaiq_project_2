@@ -1,28 +1,21 @@
-
-import React , { useState } from 'react';
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Card, Form, Container, Row, Col , Button} from "react-bootstrap";
-import './SignUp.css'
+import { Card, Form, Container, Row, Col, Button } from "react-bootstrap";
+import "./SignUp.css";
 import axios from "axios";
-import { Link } from 'react-router-dom';
-
-
+import { Link } from "react-router-dom";
 
 
 
 
 
 export default function signUp() {
-// const[nationalID , setNationalID] = useState ("")
-// const[password , setPassword] = useState ("")
-// const[dateOfBirthday , setDateOfBirthday] = useState ("")
-  
-  
   return (
     <div className="SignUp">
       <Container id="form">
         <Row>
           <Col>
+
             <Form
               // onSubmit={(e) => {
               //   handleSubmit(e);
@@ -40,6 +33,7 @@ export default function signUp() {
                 </Form.Group>
 
               <Form.Group size="lg" controlId="text">
+
                 <Form.Label >Password</Form.Label>
                 <Form.Control
                   autoFocus

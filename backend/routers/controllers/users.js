@@ -42,13 +42,4 @@ const updateUser = (req, res) => {
   });
 };
 
-// app.delete('/delete/:name',(req, res)=>{
-//     const foundProduct = products.find(elem=> elem.name == req.params.name)
-// // if(!foundProduct) return res.status(404).send('the name was not found.');
-// const index = products.indexOf(foundProduct);
-
-// products.splice(index, 1);
-// res.send(foundProduct);
-// });
-
 module.exports = { getAllUsers, getUser, addNewUser, updateUser };

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+
 import { useNavigate , Link } from "react-router-dom";
  import { Card , Container ,Row ,Col  } from "react-bootstrap";
 import './logIn.css'
@@ -13,10 +14,10 @@ export default function Login() {
   function validateForm() {
     return nationalId && password;
   }
-  
+
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("===================================");
+    console.log("======");
     axios
       .post("http://localhost:5000/users/users", {
         nationalId: nationalId,
@@ -25,25 +26,27 @@ export default function Login() {
       .then((response) => {
         console.log(response);
         if (response.status == 200) {
+
           if (response.data && response.data != " NationalID or password") {
             nav("/dashboard",{state:{nationalId:response.data.nationalId}});
           } else {
             nav("/");
           }
           sessionStorage.setItem("NationalID", response.data.NationalID);
+
         } 
         navigation("/dashboard")
       })
       .catch((err) => {
         console.log(err);
-      
       });
   }
   return (
     <div className="Login">
-     <Container>
+      <Container>
         <Row>
           <Col>
+
       <Form onSubmit={(e)=>{handleSubmit(e)}}>
       <Card.Header id="cardList1">Login With A Qiyas Account</Card.Header>
         <Form.Group size="lg" controlId="text">
@@ -69,20 +72,17 @@ export default function Login() {
         </Button>
         <br/>
 
-  <Button variant="link">You Don't Have Qiyas Account ?</Button>
-<Link to="/signUp">
-  <Button id="btn2" variant="warning">Rigster</Button>{' '}
-        </Link>
-        
-     
+              <Button variant="link">You Don't Have Qiyas Account ?</Button>
+              <Link to="/signUp">
+                <Button id="btn2" variant="warning">
+                  Rigster
+                </Button>{" "}
+              </Link>
+            </Form>
+          </Col>
 
- 
-      
-      </Form>
-      </Col>
-
-      <Col>
-          <Card>
+          <Col>
+            <Card>
               <Card.Header id="cardList1">demo Show</Card.Header>
               <Card.Body>
                 <Card.Title id="cardList2">
@@ -110,7 +110,7 @@ export default function Login() {
               </Card.Body>
             </Card>
           </Col>
-      </Row>
+        </Row>
       </Container>
     </div>
   );

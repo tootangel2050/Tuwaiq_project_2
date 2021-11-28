@@ -1,13 +1,6 @@
-import {React}from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  Form,
-} from "react-bootstrap";
+import { React } from "react";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import "./main.css";
-// import { Link } from "react-router-dom";
 
 const Main = () => {
   return (
@@ -35,8 +28,6 @@ const Main = () => {
           </Col>
         </Row>
       </Container>
-
-     
     </div>
   );
 };

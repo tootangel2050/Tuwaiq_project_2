@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { useNavigate, Link } from "react-router-dom";
-import { Card, Container, Row, Col } from "react-bootstrap";
 
-import "./logIn.css";
+import { useNavigate , Link } from "react-router-dom";
+ import { Card , Container ,Row ,Col  } from "react-bootstrap";
+import './logIn.css'
 import axios from "axios";
-
 export default function Login() {
   const nav = useNavigate();
   const [nationalId, setNationalId] = useState("");
   const [password, setPassword] = useState("");
   const navigation = useNavigate();
   function validateForm() {
-    return nationalId.length > 0 && password.length > 0;
+    return nationalId && password;
   }
 
   function handleSubmit(e) {
@@ -27,14 +26,16 @@ export default function Login() {
       .then((response) => {
         console.log(response);
         if (response.status == 200) {
-          if (response.data.NationalID === " NationalID") {
-            nav("/dashboard");
+
+          if (response.data && response.data != " NationalID or password") {
+            nav("/dashboard",{state:{nationalId:response.data.nationalId}});
           } else {
             nav("/");
           }
           sessionStorage.setItem("NationalID", response.data.NationalID);
-        }
-        navigation("/dashboard");
+
+        } 
+        navigation("/dashboard")
       })
       .catch((err) => {
         console.log(err);
@@ -45,35 +46,31 @@ export default function Login() {
       <Container>
         <Row>
           <Col>
-            <Form
-              onSubmit={(e) => {
-                handleSubmit(e);
-              }}
-            >
-              <Card.Header id="cardList1">
-                Login With A Qiyas Account
-              </Card.Header>
-              <Form.Group size="lg" controlId="text">
-                <Form.Label id="h">NationalId*</Form.Label>
-                <Form.Control
-                  autoFocus
-                  type="text"
-                  value={nationalId}
-                  onChange={(e) => setNationalId(e.target.value)}
-                />
-              </Form.Group>
-              <Form.Group size="lg" controlId="password">
-                <Form.Label id="h">Password*</Form.Label>
-                <Form.Control
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </Form.Group>
-              <Button id="btn" block type="submit" disabled={!validateForm()}>
-                Login
-              </Button>
-              <br />
+
+      <Form onSubmit={(e)=>{handleSubmit(e)}}>
+      <Card.Header id="cardList1">Login With A Qiyas Account</Card.Header>
+        <Form.Group size="lg" controlId="text">
+          <Form.Label>NationalId*</Form.Label>
+          <Form.Control
+            autoFocus
+            type="text"
+            value={nationalId}
+            onChange={(e) => setNationalId(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group size="lg" controlId="password">
+          <Form.Label>Password*</Form.Label>
+          <Form.Control
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </Form.Group>
+        <Button id="btn" block type="submit" disabled={!validateForm()}
+        >
+          Login
+        </Button>
+        <br/>
 
               <Button variant="link">You Don't Have Qiyas Account ?</Button>
               <Link to="/signUp">

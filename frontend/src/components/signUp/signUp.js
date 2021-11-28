@@ -5,41 +5,61 @@ import "./SignUp.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+
+
+
+
 export default function signUp() {
   return (
     <div className="SignUp">
-      <Container>
+      <Container id="form">
         <Row>
           <Col>
-            <Form>
-              <Card.Header id="cardList1"></Card.Header>
-              <Form.Group size="lg" controlId="text">
-                <Card.Header id="cardList1">
-                  Sign Up With A Qiyas Account
-                </Card.Header>
 
-                <Form.Label id="h">NationalID </Form.Label>
-                <Form.Control autoFocus type="text" />
-              </Form.Group>
-
-              <Card.Header id="cardList1"></Card.Header>
+            <Form
+              // onSubmit={(e) => {
+              //   handleSubmit(e);
+              // }}
+            >
+              <Card.Header id="cardList1">Sign Up With A Qiyas Account</Card.Header>
               <Form.Group size="lg" controlId="text">
-                <Form.Label id="h">Password</Form.Label>
-                <Form.Control autoFocus type="password" />
+                <Form.Label >NationalID </Form.Label>
+                <Form.Control
+                  autoFocus
+                  type="text"
+                //   value={nationalID}
+                //   onChange={(e) => setNationalID(e.target.value)}
+                />
+                </Form.Group>
+
+              <Form.Group size="lg" controlId="text">
+
+                <Form.Label >Password</Form.Label>
+                <Form.Control
+                  autoFocus
+                  type="password"
+                //   value={password}
+                //    onChange={(e) => setPassword(e.target.value)}
+                />
               </Form.Group>
               <Form.Group size="lg" controlId="password">
-                <Form.Label id="h">Date Of Birthday</Form.Label>
-                <Form.Control type="dateOfBirthday" />
+                <Form.Label >Date Of Birthday</Form.Label>
+                <Form.Control
+                  type="dateOfBirthday"
+                //    value={confirmPassword}
+                //   onChange={(e) => setDateOfBirthday(e.target.value)}
+                />
               </Form.Group>
 
-              <Button id="btn" type="submit">
-                Register
+
+              <Button id="btn" type="submit" variant="warning"  >
+              Register
               </Button>
               <Link to="/">
-                <Button variant="secondary" size="ms" active>
-                  Back To Main Page
-                </Button>
-              </Link>
+          <Button id="btn2" type="submit" variant="secondary"  active>
+             Main Page
+          </Button>
+          </Link>
             </Form>
           </Col>
         </Row>

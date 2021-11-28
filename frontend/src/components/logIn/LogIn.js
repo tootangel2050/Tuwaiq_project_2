@@ -19,23 +19,22 @@ export default function Login() {
     e.preventDefault();
     console.log("======");
     axios
-      .post("http://localhost:5000/users/users", {
+      .post("http://localhost:5000/users/login", {
         nationalId: nationalId,
         password: password,
       })
       .then((response) => {
         console.log(response);
-        if (response.status == 200) {
-
-          if (response.data && response.data != " NationalID or password") {
-            nav("/dashboard",{state:{nationalId:response.data.nationalId}});
-          } else {
-            nav("/");
-          }
-          sessionStorage.setItem("NationalID", response.data.NationalID);
-
-        } 
-        navigation("/dashboard")
+        if(response){
+          navigation("/dashboard")
+        }else{
+          const obj1= localStorage.getItem("user");
+          const obj=JSON.parse(localStorage.getItem('user'));
+          
+          console.log(obj1);
+          navigation("/dashboard")
+        }
+     
       })
       .catch((err) => {
         console.log(err);

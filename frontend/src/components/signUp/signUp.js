@@ -4,12 +4,35 @@ import { Card, Form, Container, Row, Col, Button } from "react-bootstrap";
 import "./SignUp.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+// import { users } from "../../../../backend/routers/dbUser";
 
 
 
 
 
-export default function signUp() {
+export default function SignUp() {
+  const [nationalId, setNationalId] = useState("");
+  const [password, setPassword] = useState("");
+  const navigation = useNavigate();
+  function handleSubmit(event) {
+        event.preventDefault();
+        axios
+          .post("/users/signUp", {
+            
+            nationalId:nationalId,
+            password:password})
+           .then(response=>{
+             console.log(response);
+             const obj ={id: nationalId, pass: password }
+            localStorage.setItem("user",JSON.stringify(obj));
+            
+            // localStorage.setItem("passoword",nationalId)
+            navigation('/signUp')
+           })
+           .catch(err =>{
+             console.log(err.response.data)
+           });
+       }
   return (
     <div className="SignUp">
       <Container id="form">
@@ -17,9 +40,9 @@ export default function signUp() {
           <Col>
 
             <Form
-              // onSubmit={(e) => {
-              //   handleSubmit(e);
-              // }}
+              onSubmit={(e) => {
+                 handleSubmit(e);
+               }}
             >
               <Card.Header id="cardList1">Sign Up With A Qiyas Account</Card.Header>
               <Form.Group size="lg" controlId="text">
@@ -27,8 +50,9 @@ export default function signUp() {
                 <Form.Control
                   autoFocus
                   type="text"
-                //   value={nationalID}
-                //   onChange={(e) => setNationalID(e.target.value)}
+                   //value={nationalID}
+                   
+                  onChange={(e) => setNationalId(e.target.value)}
                 />
                 </Form.Group>
 
@@ -38,19 +62,11 @@ export default function signUp() {
                 <Form.Control
                   autoFocus
                   type="password"
-                //   value={password}
-                //    onChange={(e) => setPassword(e.target.value)}
+                   //value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                 />
               </Form.Group>
-              <Form.Group size="lg" controlId="password">
-                <Form.Label >Date Of Birthday</Form.Label>
-                <Form.Control
-                  type="dateOfBirthday"
-                //    value={confirmPassword}
-                //   onChange={(e) => setDateOfBirthday(e.target.value)}
-                />
-              </Form.Group>
-
+              
 
               <Button id="btn" type="submit" variant="warning"  >
               Register
@@ -67,3 +83,4 @@ export default function signUp() {
     </div>
   );
 }
+

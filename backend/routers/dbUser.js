@@ -1,25 +1,25 @@
 const users = [
   {
     name: "Ali",
-    NationalID: 1053920599,
-    password: "665432",
+    nationalID: 1053920599,
+    password: "11111",
     isAdmin: true,
   },
   {
     name: "Ahmad",
-    NationalID: 1068720802,
+    nationalID: 1068720802,
     password: "123456",
     isAdmin: false,
   },
   {
     name: "Saad",
-    NationalID: 1053920590,
+    ntionalID: 1053920590,
     password: "111222",
     isAdmin: false,
   },
   {
     name: "Sami",
-    NationalID: 1068720800,
+    nationalID: 1068720800,
     password: "111333",
     isAdmin: false,
   },

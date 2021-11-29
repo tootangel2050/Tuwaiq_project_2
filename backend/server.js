@@ -21,6 +21,7 @@ const { registeredTestsRouter } = require("./routers/routes/testRouter");
 app.use(express.json());
 app.use("/users", userRouter);
 app.use("/test",testRouter)
+// console.log(global);
 
 // testRouter.get()
 //app routers

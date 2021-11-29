@@ -23,7 +23,7 @@ export default function SignUp() {
             password:password})
            .then(response=>{
              console.log(response);
-             const obj ={id: nationalId, pass: password }
+             const obj =[{id: nationalId, pass: password }];
             localStorage.setItem("user",JSON.stringify(obj));
             
             // localStorage.setItem("passoword",nationalId)

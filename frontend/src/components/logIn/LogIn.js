@@ -36,11 +36,13 @@ export default function Login() {
       .catch((err) => {
         const obj = JSON.parse(localStorage.getItem("user"));
         console.log(obj);
+        if(obj){
         const foundObj = obj.find(
           (elem) => elem.id == nationalId && elem.pass == password
         );
         console.log(foundObj);
         if (foundObj) navigation("/dashboard");
+        }
         else setDisplay("block");
       });
   }

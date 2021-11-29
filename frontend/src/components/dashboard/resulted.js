@@ -17,22 +17,22 @@ const Resulted = () => {
   }, []);
   return (
     <div>
-      {data.map((elem, i) => {
-        return (
-          <Container>
-            <Row>
-              <Col>
-                <Card id="t">
+      <Container>
+        <Row>
+          {data.map((elem, i) => {
+            return (
+              <Col ms={4}>
+                <Card>
                   <Card.Body>
                     <Card.Title>TestDate: {elem.TestDate}</Card.Title>
                     <Card.Text>TestScore:{elem.TestScore}</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
-            </Row>
-          </Container>
-        );
-      })}
+            );
+          })}
+        </Row>
+      </Container>
     </div>
   );
 };

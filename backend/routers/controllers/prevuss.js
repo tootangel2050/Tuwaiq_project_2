@@ -4,4 +4,17 @@ const getAllPrevuss = (req, res) => {
   res.send(prevus);
 };
 
-module.exports = { getAllPrevuss };
+const getprevus = (req, res)=>{
+  console.log('prevuss');
+  const foundprevus = prevus.filter(({nationalID})=>{
+    return nationalID == req.param.id
+  })
+  console.log(foundprevus);
+  if(foundprevus.length>0){
+    res.send(foundprevus)
+    return
+  }
+  res.status(404).send("prevuss not found")
+}
+
+module.exports = { getAllPrevuss ,getprevus };

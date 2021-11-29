@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-import { useNavigate , Link } from "react-router-dom";
- import { Card , Container ,Row ,Col  } from "react-bootstrap";
-import './logIn.css'
+import { useNavigate, Link } from "react-router-dom";
+import { Card, Container, Row, Col, Alert } from "react-bootstrap";
+import "./logIn.css";
 import axios from "axios";
 export default function Login() {
   const nav = useNavigate();
   const [nationalId, setNationalId] = useState("");
   const [password, setPassword] = useState("");
+  const [display, setDisplay] = useState("none");
   const navigation = useNavigate();
+
   function validateForm() {
     return nationalId && password;
   }
@@ -23,21 +25,23 @@ export default function Login() {
         nationalId: nationalId,
         password: password,
       })
-      .then((response) => {
-        console.log(response);
-        if(response){
-          navigation("/dashboard")
-        }else{
-          const obj1= localStorage.getItem("user");
-          const obj=JSON.parse(localStorage.getItem('user'));
-          
-          console.log(obj1);
-          navigation("/dashboard")
+      .then((res) => {
+        console.log(res);
+        if (res) {
+          navigation("/dashboard");
+        } else {
+          // const obj1= localStorage.getItem("user");
         }
-     
       })
       .catch((err) => {
-        console.log(err);
+        const obj = JSON.parse(localStorage.getItem("user"));
+        console.log(obj);
+        const foundObj = obj.find(
+          (elem) => elem.id == nationalId && elem.pass == password
+        );
+        console.log(foundObj);
+        if (foundObj) navigation("/dashboard");
+        else setDisplay("block");
       });
   }
   return (
@@ -45,31 +49,36 @@ export default function Login() {
       <Container>
         <Row>
           <Col>
-
-      <Form onSubmit={(e)=>{handleSubmit(e)}}>
-      <Card.Header id="cardList1">Login With A Qiyas Account</Card.Header>
-        <Form.Group size="lg" controlId="text">
-          <Form.Label>NationalId*</Form.Label>
-          <Form.Control
-            autoFocus
-            type="text"
-            value={nationalId}
-            onChange={(e) => setNationalId(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group size="lg" controlId="password">
-          <Form.Label>Password*</Form.Label>
-          <Form.Control
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Form.Group>
-        <Button id="btn" block type="submit" disabled={!validateForm()}
-        >
-          Login
-        </Button>
-        <br/>
+            <Form
+              onSubmit={(e) => {
+                handleSubmit(e);
+              }}
+            >
+              <Card.Header id="cardList1">
+                Login With A Qiyas Account
+              </Card.Header>
+              <Alert variant="danger" style={{display: display}}>User not found!</Alert>
+              <Form.Group size="lg" controlId="text">
+                <Form.Label>NationalId*</Form.Label>
+                <Form.Control
+                  autoFocus
+                  type="text"
+                  value={nationalId}
+                  onChange={(e) => setNationalId(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group size="lg" controlId="password">
+                <Form.Label>Password*</Form.Label>
+                <Form.Control
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </Form.Group>
+              <Button id="btn" block type="submit" disabled={!validateForm()}>
+                Login
+              </Button>
+              <br />
 
               <Button variant="link">You Don't Have Qiyas Account ?</Button>
               <Link to="/signUp">

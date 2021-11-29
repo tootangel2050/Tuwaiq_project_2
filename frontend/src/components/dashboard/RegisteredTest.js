@@ -17,12 +17,12 @@ const RegisteredTest = () => {
   }, []);
   return (
     <div>
-      {data.map((elem, i) => {
-        return (
-          <Container>
-            <Row>
+      <Container>
+        <Row>
+          {data.map((elem, i) => {
+            return (
               <Col>
-                <Card id="t">
+                <Card XS={4}>
                   <Card.Body>
                     <Card.Title>Name: {elem.Name}</Card.Title>
                     <Card.Text>
@@ -36,10 +36,10 @@ const RegisteredTest = () => {
                   </Card.Body>
                 </Card>
               </Col>
-            </Row>
-          </Container>
-        );
-      })}
+            );
+          })}
+        </Row>
+      </Container>
     </div>
   );
 };

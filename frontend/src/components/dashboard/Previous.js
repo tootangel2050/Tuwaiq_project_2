@@ -20,12 +20,12 @@ const Previous = () => {
   }, []);
   return (
     <div>
-      {data.map((elem, i) => {
-        return (
-          <Container>
-            <Row>
-              <Col>
-                <Card id="t">
+      <Container>
+        <Row>
+          {data.map((elem, i) => {
+            return (
+              <Col xs={4}>
+                <Card>
                   <Card.Body>
                     <Card.Title>Name: {elem.Name}</Card.Title>
                     <Card.Text>CenterOffice:{elem.CenterOffice}</Card.Text>
@@ -41,10 +41,10 @@ const Previous = () => {
                   </Card.Body>
                 </Card>
               </Col>
-            </Row>
-          </Container>
-        );
-      })}
+            );
+          })}
+        </Row>
+      </Container>
     </div>
   );
 };

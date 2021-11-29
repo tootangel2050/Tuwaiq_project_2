@@ -19,12 +19,12 @@ const Cancelled = () => {
   }, []);
   return (
     <div>
-      {data.map((elem, i) => {
-        return (
-          <Container>
-            <Row>
-              <Col>
-                <Card id="t">
+      <Container>
+        <Row>
+          {data.map((elem, i) => {
+            return (
+              <Col xs={4}>
+                <Card>
                   <Card.Body>
                     <Card.Title>Name: {elem.name}</Card.Title>
                     <Card.Text>
@@ -43,10 +43,10 @@ const Cancelled = () => {
                   </Card.Body>
                 </Card>
               </Col>
-            </Row>
-          </Container>
-        );
-      })}
+            );
+          })}
+        </Row>
+      </Container>
     </div>
   );
 };

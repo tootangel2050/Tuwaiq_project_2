@@ -21,12 +21,12 @@ const Available = () => {
 
   return (
     <div>
-      {data.map((elem, i) => {
-        return (
-          <Container>
-            <Row>
-              <Col>
-                <Card id="t">
+      <Container>
+        <Row>
+          {data.map((elem, i) => {
+            return (
+              <Col >
+                <Card>
                   <Card.Body>
                     <Card.Title>Name: {elem.Name}</Card.Title>
                     <Card.Text>
@@ -40,10 +40,10 @@ const Available = () => {
                   </Card.Body>
                 </Card>
               </Col>
-            </Row>
-          </Container>
-        );
-      })}
+            );
+          })}
+        </Row>
+      </Container>
     </div>
   );
 };

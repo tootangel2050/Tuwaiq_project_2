@@ -6,9 +6,12 @@ import axios from "axios";
 import "./dashboard.css";
 const Previous = () => {
   const [data, setData] = useState([]);
+  const[nationalID, setNationalID] =useState()
   useEffect(() => {
+    setNationalID(sessionStorage.nationalID);
+    console.log("inside Previouss ")
     axios
-      .get("/test/prevuss")
+      .get(`http://localhost:5000/test/prevus/${nationalID}`)
       .then((resp) => {
         // resp.data
         console.log(resp.data);
@@ -17,7 +20,7 @@ const Previous = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [nationalID]);
   return (
     <div>
       <Container>
@@ -38,6 +41,7 @@ const Previous = () => {
                     </Card.Text>
                     <Card.Text>TestDate:{elem.TestDate}</Card.Text>
                     <Card.Text>PaymentMethod:{elem.PaymentMethod}</Card.Text>
+                
                   </Card.Body>
                 </Card>
               </Col>

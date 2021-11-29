@@ -11,18 +11,7 @@ const users = [
     password: "123456",
     isAdmin: false,
   },
-  {
-    name: "Saad",
-    ntionalID: 1053920590,
-    password: "111222",
-    isAdmin: false,
-  },
-  {
-    name: "Sami",
-    nationalID: 1068720800,
-    password: "111333",
-    isAdmin: false,
-  },
+  
 ];
 
 module.exports = { users };

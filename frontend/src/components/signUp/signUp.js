@@ -4,7 +4,6 @@ import { Card, Form, Container, Row, Col, Button } from "react-bootstrap";
 import "./SignUp.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import { users } from "../../../../backend/routers/dbUser";
 
 
 

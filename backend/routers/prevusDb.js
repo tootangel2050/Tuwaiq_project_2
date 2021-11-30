@@ -7,7 +7,7 @@ const prevus = [
     AppointmentStatus: "Confirmed",
     TestDate: 15 / 01 / 1441,
     PaymentMethod: "Sadad",
-    nationalID: 1053920599,
+    nationalID: "1053920599",
   },
 
   {
@@ -18,7 +18,7 @@ const prevus = [
     AppointmentStatus: "Confirmed",
     TestDate: 23 / 03 / 1439,
     PaymentMethod: "Sadad",
-    nationalID: 1068720802,
+    nationalID: "1068720802",
 
   },
 ];

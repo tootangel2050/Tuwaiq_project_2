@@ -5,6 +5,7 @@ const registeredTests = [
     TestLanguage: "Arabic",
     TestTypeMechanism: "Computer based",
     TestDate: "23/01/2016 Evening",
+    nationalID: "1053920599",
   },
   {
     Name: "learning Outcomes Test",
@@ -12,6 +13,7 @@ const registeredTests = [
     TestLanguage: "Arabic / English",
     TestTypeMechanism: "Paper based",
     TestDate: "-27/01/2016 Evening",
+    nationalID: "1068720802",
   },
 
   {
@@ -20,6 +22,7 @@ const registeredTests = [
     TestLanguage: "Arabic",
     TestTypeMechanism: "Computer based",
     TestDate: "14/09/2019 Evening",
+    nationalID: "1068720802",
   },
 ];
 

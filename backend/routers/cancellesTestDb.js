@@ -6,6 +6,7 @@ const cancellesTest = [
     CancellationTime: "27 / 12 / 1442",
     TestTypeMechanism: "Computer based Cancellation",
     CancellationReason: "Payment Expired",
+    nationalID: "1053920599",
   },
 
   {
@@ -15,6 +16,7 @@ const cancellesTest = [
     CancellationTime: "10 / 03 / 1441",
     TestTypeMechanism: "Paper based",
     CancellationReason: "Payment Expired",
+    nationalID: "1068720802",
   },
 
   {
@@ -24,6 +26,7 @@ const cancellesTest = [
     CancellationTime: "07 / 03 / 1441",
     TestTypeMechanism: "Paper based",
     CancellationReason: "Payment Expired",
+    nationalID: "1068720802",
   },
 
   {
@@ -33,6 +36,7 @@ const cancellesTest = [
     CancellationTime: "22 / 11 / 1439",
     TestTypeMechanism: "Computer based",
     CancellationReason: "Payment Expired",
+    nationalID: "1053920599",
   },
 ]
 

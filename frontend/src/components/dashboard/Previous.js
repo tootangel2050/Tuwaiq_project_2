@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router";
 
 import { Row, Col, Container, Card } from "react-bootstrap";
-
 import axios from "axios";
 import "./dashboard.css";
+
 const Previous = () => {
   const [data, setData] = useState([]);
   const[nationalID, setNationalID] =useState();

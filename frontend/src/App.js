@@ -5,7 +5,8 @@ import Main from "./components/main/Main";
 import Login from "./components/logIn/LogIn";
 import Dashboard from "./components/dashboard/Dashboard";
 import Footer from "./components/footer/Footer";
-import SignUp from "./components/SignUp/SignUp";
+import SignUp from "./components/signUp/SignUp";
+import Admin from "./components/admin/Admin";
 
 
 
@@ -13,7 +14,6 @@ const App = () => {
   return (
     <div>
       <Header />
-
       <Routes>
         <Route
           path="/"
@@ -32,9 +32,16 @@ const App = () => {
             </>
           }
         />
-        
+        <Route
+          path="/admin"
+          element={
+            <>
+              <Admin />
+            </>
           }
         />
+        
+        
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
 

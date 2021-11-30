@@ -7,6 +7,8 @@ import Dashboard from "./components/dashboard/Dashboard";
 import Footer from "./components/footer/Footer";
 import SignUp from "./components/SignUp/SignUp";
 
+
+
 const App = () => {
   return (
     <div>
@@ -28,6 +30,9 @@ const App = () => {
             <>
               <SignUp />
             </>
+          }
+        />
+        
           }
         />
         <Route path="/dashboard" element={<Dashboard />} />

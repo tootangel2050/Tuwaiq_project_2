@@ -1,7 +1,9 @@
-const {AvailableTestsForRegistration} = require("../dbAvailableTestsForRegistration");
+const {
+  AvailableTestsForRegistration,
+} = require("../dbAvailableTestsForRegistration");
 
-const getAllAvailableTestsForRegistration = (req,res)=>{
-    res.send(AvailableTestsForRegistration);
+const getAllAvailableTestsForRegistration = (req, res) => {
+  res.send(AvailableTestsForRegistration);
 };
 
-module.exports = {getAllAvailableTestsForRegistration};
+module.exports = { getAllAvailableTestsForRegistration };

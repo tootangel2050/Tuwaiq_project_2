@@ -1,27 +1,23 @@
 @media all and (min-width: 480px) {
   .SignUp {
-
     margin: 50px;
     max-width: 320px;
     padding: 300px;
     display: inline;
   }
 
-
   #form {
-    border: 1px solid rgb(224, 222, 222); ;
+    border: 1px solid rgb(224, 222, 222);
     width: 350px;
     size: 200px;
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
-
+    justify-content: space-around;
   }
 }
 
 #h,
 #cardList1 {
-
   margin: 30px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   border-radius: 5px;
@@ -51,7 +47,6 @@
 }
 
 #btn3 {
-
   width: 150px;
   height: 30px;
   text-align: center;

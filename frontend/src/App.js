@@ -5,10 +5,8 @@ import Main from "./components/main/Main";
 import Login from "./components/logIn/LogIn";
 import Dashboard from "./components/dashboard/Dashboard";
 import Footer from "./components/footer/Footer";
-import SignUp from "./components/signUp/SignUp";
 import Admin from "./components/admin/Admin";
-
-
+import SignUp from "./components/SignUp/SignUp";
 
 const App = () => {
   return (
@@ -40,8 +38,7 @@ const App = () => {
             </>
           }
         />
-        
-        
+
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
 

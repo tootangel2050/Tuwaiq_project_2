@@ -6,14 +6,14 @@ import axios from "axios";
 
 const RegisteredTest = () => {
   const [data, setData] = useState([]);
-  const[nationalID, setNationalID] =useState();
-  const {state}= useLocation();
-  const nationID =  state.nationalID;
+  const [nationalID, setNationalID] = useState();
+  const { state } = useLocation();
+  const nationID = state.nationalID;
   useEffect(() => {
-    console.log("inside registered ")
+    console.log("inside registered ");
     axios
-    .get(`http://localhost:5000/test/registeredTests/${nationID}`)
-    
+      .get(`http://localhost:5000/test/registeredTests/${nationID}`)
+
       .then((resp) => {
         setData(resp.data);
       })
@@ -23,7 +23,7 @@ const RegisteredTest = () => {
   }, [nationID]);
   return (
     <div>
-      <Container>
+      <Container id="card1">
         <Row>
           {data.map((elem, i) => {
             return (

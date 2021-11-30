@@ -1,19 +1,21 @@
-const {cancellesTest} = require("../cancellesTestDb");
+const { cancellesTest } = require("../cancellesTestDb");
 
 const getAllCancellesTest = (req, res) => {
   res.send(cancellesTest);
 };
-const getcancellesTest = (req, res)=>{
+const getcancellesTest = (req, res) => {
   console.log(req.params.id);
-  const foundcancellesTest = cancellesTest.filter(({nationalID})=>{
-    return nationalID == req.params.id
-  })
-  console.log(foundcancellesTest);
-  if(foundcancellesTest.length>0){
-    res.send(foundcancellesTest)
-    return
+  const foundcancellesTest = cancellesTest.filter(({ nationalID }) => {
+    return nationalID == req.params.id;
+  });
+
+  if (foundcancellesTest.length > 0) {
+    res.send(foundcancellesTest);
+    return;
   }
-  res.status(404).send("registeredTest not found")
-}
+  res.status(404).send("registeredTest not found");
+};
 module.exports = {
-  getAllCancellesTest, getcancellesTest}
+  getAllCancellesTest,
+  getcancellesTest,
+};

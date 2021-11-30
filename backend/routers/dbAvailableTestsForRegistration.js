@@ -1,6 +1,6 @@
 const AvailableTestsForRegistration = [
   {
-    Name: "Standardized Test Of English Proficiency For SEU Candidates",
+    Name: "Standardized Test Of English  ",
     AppointmentStatus: "Early Registration",
     TestLanguage: "English",
     TestTypeMechanism: "Computer based",

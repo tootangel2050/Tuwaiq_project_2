@@ -4,7 +4,6 @@ const resulted = [
     TestDate: 15 / 01 / 1441,
     TestScore: 100,
     nationalID: "1053920599",
-    
   },
   {
     name: "CognitiveAbilityTest",

@@ -55,7 +55,6 @@ const Dashboard = () => {
         </Tab>
         <Tab eventKey="resulted" title="Resulted">
           <Resulted />
-
         </Tab>
         <Tab eventKey="profile" title="Personal Identity Verification">
           <p id="drop">Identity Verification Policy</p>
@@ -209,9 +208,9 @@ const Dashboard = () => {
             </InputGroup>
             <br />
             <Link to="dashboard">
-            <Button id="btn1" variant="primary" size="lg" active>
-              Follow up
-            </Button>{" "}
+              <Button id="btn1" variant="primary" size="lg" active>
+                Follow up
+              </Button>{" "}
             </Link>
             <Link to="/">
               <Button id="btn1" variant="secondary" size="lg" active>
@@ -219,10 +218,10 @@ const Dashboard = () => {
               </Button>
             </Link>
             <Link to="/admin">
-            <Button id="btn1" variant="secondary" size="lg" active>
+              <Button id="btn1" variant="secondary" size="lg" active>
                 Admin
               </Button>
-              </Link>
+            </Link>
           </Container>
         </Tab>
       </Tabs>

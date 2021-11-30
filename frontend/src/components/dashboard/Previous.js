@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router";
-
 import { Row, Col, Container, Card } from "react-bootstrap";
 import axios from "axios";
 import "./dashboard.css";
 
 const Previous = () => {
   const [data, setData] = useState([]);
-  const[nationalID, setNationalID] =useState();
-  const {state}= useLocation();
-   const nationID =  state.nationalID;
+  const [nationalID, setNationalID] = useState();
+  const { state } = useLocation();
+  const nationID = state.nationalID;
 
   useEffect(() => {
-    console.log("inside Previouss ")
+    console.log("inside Previouss ");
     axios
       .get(`http://localhost:5000/test/prevus/${nationID}`)
       .then((resp) => {
@@ -26,7 +25,7 @@ const Previous = () => {
   }, [nationID]);
   return (
     <div>
-      <Container>
+      <Container id="card1">
         <Row>
           {data.map((elem, i) => {
             return (
@@ -44,7 +43,6 @@ const Previous = () => {
                     </Card.Text>
                     <Card.Text>TestDate:{elem.TestDate}</Card.Text>
                     <Card.Text>PaymentMethod:{elem.PaymentMethod}</Card.Text>
-                
                   </Card.Body>
                 </Card>
               </Col>
@@ -56,4 +54,4 @@ const Previous = () => {
   );
 };
 
-export default Previous ;
+export default Previous;

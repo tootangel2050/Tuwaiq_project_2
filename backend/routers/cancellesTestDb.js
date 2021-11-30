@@ -4,14 +4,14 @@ const cancellesTest = [
     CenterOfficeLocation: "Qiyas-NajranUniversity",
     Date: "25 / 01 / 1443",
     CancellationTime: "27 / 12 / 1442",
-    TestTypeMechanism: "Computer based Cancellation",
+    TestTypeMechanism: "Computer based ",
     CancellationReason: "Payment Expired",
     nationalID: "1053920599",
   },
 
   {
     name: "Teachers Genaral Test",
-    CenterOfficeLocation: "Qiyas-Najran University",
+    CenterOfficeLocation: "Qiyas-NajranUniversity",
     Date: "26 / 03 / 1441",
     CancellationTime: "10 / 03 / 1441",
     TestTypeMechanism: "Paper based",
@@ -38,6 +38,6 @@ const cancellesTest = [
     CancellationReason: "Payment Expired",
     nationalID: "1053920599",
   },
-]
+];
 
-module.exports = { cancellesTest }
+module.exports = { cancellesTest };

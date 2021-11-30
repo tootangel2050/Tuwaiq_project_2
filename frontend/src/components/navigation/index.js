@@ -1,9 +1,7 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import Available from "../dashboard/Available";
-import Cancelled from "../dashboard/Cancelled";
-import Previous from "../dashboard/Previous";
+
 
 const Navigation = () => {
   return (

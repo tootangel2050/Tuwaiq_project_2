@@ -5,10 +5,9 @@ import { useLocation } from "react-router";
 
 const Resulted = () => {
   const [data, setData] = useState([]);
-  const[nationalID, setNationalID] =useState();
-  const {state}= useLocation();
-  const nationID =  state.nationalID;
-
+  const [nationalID, setNationalID] = useState();
+  const { state } = useLocation();
+  const nationID = state.nationalID;
 
   useEffect(() => {
     axios
@@ -23,7 +22,7 @@ const Resulted = () => {
   }, [nationID]);
   return (
     <div>
-      <Container>
+      <Container id="card1">
         <Row>
           {data.map((elem, i) => {
             return (

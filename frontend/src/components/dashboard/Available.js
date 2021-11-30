@@ -21,11 +21,11 @@ const Available = () => {
 
   return (
     <div>
-      <Container>
+      <Container id="card1">
         <Row>
           {data.map((elem, i) => {
             return (
-              <Col >
+              <Col>
                 <Card>
                   <Card.Body>
                     <Card.Title>Name: {elem.Name}</Card.Title>

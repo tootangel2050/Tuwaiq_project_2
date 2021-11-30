@@ -6,11 +6,9 @@ import "./dashboard.css";
 
 const Cancelled = () => {
   const [data, setData] = useState([]);
-  const[nationalID, setNationalID] =useState();
-  const {state}= useLocation();
-  const nationID =  state.nationalID;
-
-
+  const [nationalID, setNationalID] = useState();
+  const { state } = useLocation();
+  const nationID = state.nationalID;
 
   useEffect(() => {
     axios
@@ -25,7 +23,7 @@ const Cancelled = () => {
   }, [nationID]);
   return (
     <div>
-      <Container>
+      <Container id="card1">
         <Row>
           {data.map((elem, i) => {
             return (

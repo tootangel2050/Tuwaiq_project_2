@@ -19,7 +19,6 @@ const prevus = [
     TestDate: 23 / 03 / 1439,
     PaymentMethod: "Sadad",
     nationalID: "1068720802",
-
   },
 ];
 

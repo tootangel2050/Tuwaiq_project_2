@@ -5,9 +5,9 @@ const getAllPrevuss = (req, res) => {
 };
 
 const getprevus = (req, res)=>{
-  console.log('prevuss');
+  console.log(req.params.id);
   const foundprevus = prevus.filter(({nationalID})=>{
-    return nationalID == req.param.id
+    return nationalID == req.params.id
   })
   console.log(foundprevus);
   if(foundprevus.length>0){

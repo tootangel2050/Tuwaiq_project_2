@@ -7,13 +7,15 @@ const resultedRouter = express.Router();
 const testRouter = express.Router();
 
 const {getAllResulteds} = require("../controllers/resulted");
-const {getAllRegisteredTestses } = require("../controllers/registeredTests");
+const {getAllRegisteredTestses , getregisteredTests } = require("../controllers/registeredTests");
 const {getAllCancellesTest}= require("../controllers/cancellesTest");
 const {getAllAvailableTestsForRegistration }= require("../controllers/availableTestsForRegistration");
 const {getAllPrevuss ,getprevus}= require("../controllers/prevuss");
 
 
 testRouter.get("/",getAllRegisteredTestses);
+testRouter.get("/registeredTests/:id",getregisteredTests);
+
 
 testRouter.get("/prevuss",getAllPrevuss );
 testRouter.get("/prevus/:id",getprevus);

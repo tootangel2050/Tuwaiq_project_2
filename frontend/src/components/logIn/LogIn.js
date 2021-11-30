@@ -8,27 +8,28 @@ import "./logIn.css";
 import axios from "axios";
 export default function Login() {
   const nav = useNavigate();
-  const [nationalId, setNationalId] = useState("");
+  const [nationalID, setNationalID] = useState("");
   const [password, setPassword] = useState("");
   const [display, setDisplay] = useState("none");
   const navigation = useNavigate();
+  
+
 
   function validateForm() {
-    return nationalId && password;
+    return nationalID && password;
   }
-
   function handleSubmit(e) {
     e.preventDefault();
     console.log("======");
     axios
       .post("http://localhost:5000/users/login", {
-        nationalId: nationalId,
+        nationalID: nationalID,
         password: password,
       })
       .then((res) => {
         console.log(res);
         if (res) {
-          navigation("/dashboard");
+          navigation("/dashboard",{state:{nationalID: nationalID}});
         } else {
     
         }
@@ -38,7 +39,7 @@ export default function Login() {
         console.log(obj);
         //if(obj){
         const foundObj = obj.find(
-          (elem) => elem.id == nationalId && elem.pass == password
+          (elem) => elem.id == nationalID && elem.pass == password
         );
         console.log(foundObj);
         if (foundObj) navigation("/dashboard");
@@ -65,8 +66,8 @@ export default function Login() {
                 <Form.Control
                   autoFocus
                   type="text"
-                  value={nationalId}
-                  onChange={(e) => setNationalId(e.target.value)}
+                  value={nationalID}
+                  onChange={(e) => setNationalID(e.target.value)}
                 />
               </Form.Group>
               <Form.Group size="lg" controlId="password">

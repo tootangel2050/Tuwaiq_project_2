@@ -33,21 +33,21 @@ const updateUser = (req, res) => {
   });
 };
   const registrUser = (req,res)=>{
-      const NationalId = req.query.NationalID
+      const nationalId = req.query.nationalID
       users.forEach((elem,i)=>{
           if(i == NationalId){
-              elem.nationalID = req.body.NationalID;
-              elem.password = req.body.Password;
-              elem.dateOfBirth=req.body.DateOfBirth;
+              elem.nationalID = req.body.nationalID;
+              elem.password = req.body.password;
+              elem.dateOfBirth=req.body.dateOfBirth;
             
           }
       })
   }
    function getUser(req, res) {
 console.log(req.body)
-    const{nationalId,password}=req.body;
+    const{nationalID,password}=req.body;
     const foundUser=users.find((elem)=>{
-      return(elem.nationalID==nationalId&& elem.password==password)})
+      return(elem.nationalID==nationalID&& elem.password==password)})
       if(foundUser)
       res.send(foundUser)
 

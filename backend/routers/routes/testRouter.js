@@ -6,9 +6,9 @@ const registeredTestsRouter = express.Router();
 const resultedRouter = express.Router();
 const testRouter = express.Router();
 
-const {getAllResulteds} = require("../controllers/resulted");
+const {getAllResulteds,getresulted} = require("../controllers/resulted");
 const {getAllRegisteredTestses , getregisteredTests } = require("../controllers/registeredTests");
-const {getAllCancellesTest}= require("../controllers/cancellesTest");
+const {getAllCancellesTest , getcancellesTest}= require("../controllers/cancellesTest");
 const {getAllAvailableTestsForRegistration }= require("../controllers/availableTestsForRegistration");
 const {getAllPrevuss ,getprevus}= require("../controllers/prevuss");
 
@@ -22,7 +22,11 @@ testRouter.get("/prevus/:id",getprevus);
 // // prevusRouter.get('/prevuss/:id',getPrevus);
 
 testRouter.get("/result",getAllResulteds);
+testRouter.get("/resulted/:id",getresulted);
+
 testRouter.get("/cancelled",getAllCancellesTest);
+testRouter.get("/Cancelled/:id",getcancellesTest);
+
 testRouter.get("/available",getAllAvailableTestsForRegistration);
 
 

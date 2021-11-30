@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from "react";
-
 import { Row, Col, Container, Card } from "react-bootstrap";
-
+import { useLocation } from "react-router";
 import axios from "axios";
 import "./dashboard.css";
+
 const Cancelled = () => {
   const [data, setData] = useState([]);
+  const[nationalID, setNationalID] =useState();
+  const {state}= useLocation();
+  const nationID =  state.nationalID;
+
+
+
   useEffect(() => {
     axios
-      .get("/test/cancelled")
+      .get(`http://localhost:5000/test/Cancelled/${nationID}`)
       .then((resp) => {
         console.log(resp.data);
         setData(resp.data);
@@ -16,7 +22,7 @@ const Cancelled = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [nationID]);
   return (
     <div>
       <Container>

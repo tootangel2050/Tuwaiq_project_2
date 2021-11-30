@@ -218,6 +218,11 @@ const Dashboard = () => {
                 Main Page
               </Button>
             </Link>
+            <Link to="/admin">
+            <Button id="btn1" variant="secondary" size="lg" active>
+                Admin
+              </Button>
+              </Link>
           </Container>
         </Tab>
       </Tabs>

@@ -6,6 +6,7 @@ import Login from "./components/logIn/LogIn";
 import Dashboard from "./components/dashboard/Dashboard";
 import Footer from "./components/footer/Footer";
 import SignUp from "./components/signUp/SignUp";
+import Admin from "./components/admin/Admin";
 
 const App = () => {
   return (
@@ -27,6 +28,14 @@ const App = () => {
           element={
             <>
               <SignUp />
+            </>
+          }
+        />
+        <Route
+          path="/admin"
+          element={
+            <>
+              <Admin />
             </>
           }
         />

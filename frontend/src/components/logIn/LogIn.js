@@ -34,13 +34,14 @@ export default function Login() {
       .catch((err) => {
         const obj = JSON.parse(localStorage.getItem("user"));
         console.log(obj);
-        if (obj) {
+        //if (obj) {
           const foundObj = obj.find(
             (elem) => elem.id == nationalID && elem.pass == password
           );
           console.log(foundObj);
-          if (foundObj) navigation("/dashboard");
-        } else setDisplay("block");
+          if (foundObj) navigation("/dashboard", { state: { nationalID: nationalID } });
+       // }
+         else setDisplay("block");
       });
   }
   return (

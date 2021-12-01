@@ -21,6 +21,7 @@ import Resulted from "./resulted";
 
 const Dashboard = () => {
   const [data, setData] = useState([]);
+  
   useEffect(() => {
     axios
       .get("/users")

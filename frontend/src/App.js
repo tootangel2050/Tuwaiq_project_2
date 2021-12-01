@@ -6,7 +6,7 @@ import Login from "./components/logIn/LogIn";
 import Dashboard from "./components/dashboard/Dashboard";
 import Footer from "./components/footer/Footer";
 import Admin from "./components/admin/Admin";
-import SignUp from "./components/SignUp/SignUp";
+import SignUp from "./components/signUp/SignUp";
 
 const App = () => {
   return (

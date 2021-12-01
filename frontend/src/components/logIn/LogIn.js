@@ -11,6 +11,7 @@ export default function Login() {
   const [nationalID, setNationalID] = useState("");
   const [password, setPassword] = useState("");
   const [display, setDisplay] = useState("none");
+  const [url, setUrl] = useState("");
   const navigation = useNavigate();
 
   function validateForm() {
@@ -99,23 +100,34 @@ export default function Login() {
                   paper or paper computerized test, and lots of other processes
                   to see by watching the demo.
                 </Card.Title>
-
-                <select id="list" name="list">
-                  <option value="Register">Qiyas Exams Registration</option>
-                  <option value="paperBased">
+                <select
+                  id="list"
+                  name="list"
+                  onChange={(e) => {
+                    setUrl(e.target.value);
+                  }}
+                >
+                  <option value="https://www.youtube.com/watch?v=LTsdN06OJvI">
+                    Qiyas Exams Registration
+                  </option>
+                  <option value="https://www.youtube.com/watch?v=y34lAmfiEMo">
                     paper Based exams registration
                   </option>
-                  <option value="computerBased">
+                  <option value="https://www.youtube.com/watch?v=QJ1RImfVttA">
                     computer based exam Registration
                   </option>
-                  <option value="Payment">Payment fees</option>
+                  <option value="https://www.youtube.com/watch?v=tBsT7Ty8LKk">
+                    Payment fees
+                  </option>
                 </select>
-
-                <Link to="test/">
+                {/* <Link to="test/">
+                  {" "}
+                </Link> */}
+                <a href={url} target="_blank">
                   <Button id="btn3" variant="primary" active>
                     Play
-                  </Button>{" "}
-                </Link>
+                  </Button>
+                </a>
               </Card.Body>
             </Card>
           </Col>

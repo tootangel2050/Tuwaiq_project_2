@@ -1,29 +1,21 @@
 @media all {
   #bgColor {
-    background: rgba(150, 193, 205, 0.37);
     background: linear-gradient(
       0deg,
       rgba(150, 193, 205, 0.37) 0%,
       rgba(0, 141, 255, 0.2) 0%
     );
-    background: -webkit-linear-gradient(
-      0deg,
-      rgba(150, 193, 205, 0.37) 0%,
-      rgba(0, 141, 255, 0.2) 0%
-    );
-    background: -moz-linear-gradient(
-      0deg,
-      rgba(150, 193, 205, 0.37) 0%,
-      rgba(0, 141, 255, 0.2) 0%
-    );
+    height: 190px;
     border-radius: 5px;
     flex-direction: row;
+    margin: 15px;
   }
 }
 
 #div {
   text-align: center;
-  padding: 15px 10px 15px 10px;
+  padding: 25px;
+  display: initial;
 }
 
 .hthree {

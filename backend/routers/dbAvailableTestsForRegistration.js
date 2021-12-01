@@ -7,7 +7,7 @@ const AvailableTestsForRegistration = [
     TestDate: "21/01/2016 Evening",
   },
   {
-    Name: "Cognitive Ability Test January 2022",
+    Name: "Cognitive Ability Test January",
     AppointmentStatus: "Early Registration",
     TestLanguage: "Arabic",
     TestTypeMechanism: "Paper based",

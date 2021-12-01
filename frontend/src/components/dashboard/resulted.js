@@ -21,8 +21,8 @@ const Resulted = () => {
       });
   }, [nationID]);
   return (
-    <div>
-      <Container id="card1">
+    <div id="card1">
+      <Container>
         <Row>
           {data.map((elem, i) => {
             return (

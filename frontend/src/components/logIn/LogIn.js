@@ -12,8 +12,6 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [display, setDisplay] = useState("none");
   const navigation = useNavigate();
-  
-
 
   function validateForm() {
     return nationalID && password;
@@ -29,22 +27,20 @@ export default function Login() {
       .then((res) => {
         console.log(res);
         if (res) {
-          navigation("/dashboard",{state:{nationalID: nationalID}});
+          navigation("/dashboard", { state: { nationalID: nationalID } });
         } else {
-    
         }
       })
       .catch((err) => {
         const obj = JSON.parse(localStorage.getItem("user"));
         console.log(obj);
-        //if(obj){
-        const foundObj = obj.find(
-          (elem) => elem.id == nationalID && elem.pass == password
-        );
-        console.log(foundObj);
-        if (foundObj) navigation("/dashboard");
-        //}
-        else setDisplay("block");
+        if (obj) {
+          const foundObj = obj.find(
+            (elem) => elem.id == nationalID && elem.pass == password
+          );
+          console.log(foundObj);
+          if (foundObj) navigation("/dashboard");
+        } else setDisplay("block");
       });
   }
   return (
@@ -60,7 +56,9 @@ export default function Login() {
               <Card.Header id="cardList1">
                 Login With A Qiyas Account
               </Card.Header>
-              <Alert variant="danger" style={{display: display}}>User not found!</Alert>
+              <Alert variant="danger" style={{ display: display }}>
+                User not found!
+              </Alert>
               <Form.Group size="lg" controlId="text">
                 <Form.Label>NationalId*</Form.Label>
                 <Form.Control

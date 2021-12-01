@@ -4,7 +4,6 @@ const getAllCancellesTest = (req, res) => {
   res.send(cancellesTest);
 };
 const getcancellesTest = (req, res) => {
-  console.log(req.params.id);
   const foundcancellesTest = cancellesTest.filter(({ nationalID }) => {
     return nationalID == req.params.id;
   });

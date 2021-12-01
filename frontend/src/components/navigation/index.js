@@ -2,7 +2,6 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 
-
 const Navigation = () => {
   return (
     <>
